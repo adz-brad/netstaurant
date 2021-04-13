@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "prettier": "2.2.1"
-  },
+  }, 
   "repository": {
     "type": "git",
     "url": "https://github.com/adrenalize-brad/gatsby-react-bootstrap-starter"

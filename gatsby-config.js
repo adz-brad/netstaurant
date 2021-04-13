@@ -1,5 +1,5 @@
 require('dotenv').config()
-
+ 
 module.exports = {
   siteMetadata: {
     title: `Gatsby React-Bootstrap Starter`,
