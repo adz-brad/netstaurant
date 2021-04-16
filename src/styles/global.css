@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    li, ul {
+        @apply list-disc list-inside;
+    }
+
+    li{
+        @apply py-1 text-lg leading-snug;
+    }
+
+    .react-tabs__tab--selected{
+        @apply bg-primary-600 !important;
+    }
+
+    .react-tabs__tab--selected>h4{
+        @apply text-white;
+    }
+
+}
+
+
+

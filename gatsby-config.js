@@ -4,17 +4,23 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby React-Bootstrap Starter`,
     description: `Adrenalize Digital - Gatsby React-Bootstrap Starter`,
-    keywords: '',
-    siteUrl: '',
+    keywords: 'Gatsy, React, Bootstrap, Starer',
   },
   plugins: [
-    'gatsby-plugin-mdx',
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-netlify`,
-    `gatsby-plugin-algolia`,
+    {
+      resolve: 'gatsby-source-shopify',
+      options: {
+        shopName: process.env.GATSBY_SHOPIFY_SHOP_NAME,
+        accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
+        downloadImages: true,
+        verbose: false,
+      },
+    },
+    'gatsby-plugin-postcss',
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -26,7 +32,9 @@ module.exports = {
             },
           }),
         ],
-        precision: 6,
+        sassOptions: {
+          precision: 6,
+        },
       },
     },
   ],
