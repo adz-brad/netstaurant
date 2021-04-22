@@ -6,12 +6,16 @@
 
 @layer base {
 
+    *:focus{
+        outline-color: black;
+    }
+
     li, ul {
         @apply list-disc list-inside;
     }
 
     li{
-        @apply py-1 text-lg leading-snug;
+        @apply text-xl leading-snug;
     }
 
     .react-tabs__tab--selected{
@@ -22,7 +26,93 @@
         @apply text-white;
     }
 
+    .button{
+        @apply mx-auto font-semibold rounded-md shadow-sm bg-primary-600 hover:bg-primary-700;
+    }
+
+    .ais-SearchBox{
+        @apply w-4/5 m-auto;
+    }
+
+    .ais-SearchBox-form{
+        @apply w-full;
+    }
+   
+    .ais-SearchBox-input{
+        @apply  bg-gray-600 bg-opacity-10 rounded-md w-full text-3xl p-5;
+    }
+
+    .ais-SearchBox-input{
+        height:50px;
+    }
+
+    .ais-SearchBox-submit, .ais-SearchBox-resetIcon{
+        @apply  hidden;
+    }
+   
+    .ais-Hits-list{
+        @apply  grid grid-cols-5 gap-0.5;
+    }
+
+    .ais-Hits-item{
+        @apply rounded-sm shadow-md m-1 list-none;
+    }
+
+    .product-description table{
+        @apply hidden;
+    }
+
+    .product-specs a, .product-specs p, .product-specs ul, .product-specs li, .product-specs img{
+        @apply hidden
+    }
+
+    .product-specs table{
+        @apply w-full max-w-xl;
+    }
+
+    .product-specs table tbody tr{
+        @apply border-b;
+    }
+
+    ::-webkit-scrollbar {
+        @apply bg-white w-2;
+      }
+      
+      ::-webkit-scrollbar-track {
+        @apply shadow-md;
+      }
+       
+      ::-webkit-scrollbar-thumb {
+        @apply bg-primary-600 rounded-lg;
+      }
+      
+      :-webkit-scrollbar-thumb:hover {
+        @apply bg-primary-700;
+      }
+
+      .nav ::-webkit-scrollbar, .cart-overlay ::-webkit-scrollbar{
+        @apply hidden;
+      }
+
+      .breadcrumb__list{
+          @apply flex flex-row items-center w-full border-b p-2;
+      }
+
+      .breadcrumb__list li{
+        @apply list-none pl-2;
+    }
+
+    .breadcrumb__list li a{
+        @apply hover:text-primary-600;
+    }
+
+    .ais-RefinementList-list li{
+        @apply list-none;
+    }
+
 }
 
 
+    
 
+    

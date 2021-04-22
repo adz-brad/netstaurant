@@ -4,8 +4,8 @@ const NotFoundPage = () => {
 
     return(
 
-            <div className="w-full h-full">
-                Oops .. try searching for a product ALGOLIA ALL PRODUCT SEARCH
+            <div className="text-center py-10">
+                <span className="text-3xl font-bold">Oops .. this page doesn't seem to exist.</span>
             </div>
 
     )

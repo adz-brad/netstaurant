@@ -7,20 +7,22 @@ module.exports = {
     screens:{
       sm: '600px',
       md: '768px',
-      lg: '976px',
-      xl: '1440px',
+      lg: '1024px',
+      xl: '1280px',
+      xxl: '1536px'
     },
     fontFamily: {
-      'sans': ['Ubuntu', 'sans-serif'],
+      'sans': ['Barlow', 'sans-serif'],
       'serif': ['ui-serif'],
       'mono': ['ui-monospace'],
-      'display': ['Ubuntu', 'sans-serif'],
-      'body': ['Ubuntu', 'sans-serif'],
+      'display': ['Barlow', 'sans-serif'],
+      'body': ['Barlow', 'sans-serif'],
      },
     colors: {
       primary: colors.red,
       secondary: colors.black,
       white: colors.white,
+      gray: colors.gray,
       black: colors.black,
       green: colors.green,
       transparent: 'transparent',

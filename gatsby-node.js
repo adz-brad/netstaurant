@@ -21,6 +21,9 @@
                       vendor
                       tags
                       handle
+                      variants{
+                        price
+                      }
                       priceRange {
                         minVariantPrice {
                           amount
@@ -49,9 +52,33 @@
                     tags
                     productType
                     availableForSale
+                    options {
+                      id
+                      name
+                      values
+                    }
+                    variants {
+                      id
+                      title
+                      price
+                      weight
+                      weightUnit
+                      sku
+                      availableForSale
+                      shopifyId
+                      selectedOptions {
+                        name
+                        value
+                      }
+                    }
                     priceRange {
                       minVariantPrice {
                         amount
+                        currencyCode
+                      }
+                      maxVariantPrice {
+                        amount
+                        currencyCode
                       }
                     }
                     images {

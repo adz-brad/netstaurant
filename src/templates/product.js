@@ -1,6 +1,6 @@
 import React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import Button from '../components/button/button'
+import ProductForm from '../components/cart/addToCart'
 import { SRLWrapper } from "simple-react-lightbox";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -9,9 +9,9 @@ const Product = ({ pageContext: { product } }) => {
 
     return(
 
-        <div className="py-5 mx-auto w-full xl:w-4/5">
+        <div className="m-1 shadow-lg rounded-sm bg-white">
 
-            <h1 className="text-4xl w-full text-center py-5">{product.title}</h1>
+            <h1 className="text-4xl font-bold w-full text-center py-4">{product.title}</h1>
 
             <div className="flex flex-col lg:flex-row py-5">     
 
@@ -24,7 +24,7 @@ const Product = ({ pageContext: { product } }) => {
                             {product.images.slice(0, 1).map((image) => {
 
                             return(
-                                <GatsbyImage image={image.localFile.childImageSharp.gatsbyImageData} className="w-full cursor-pointer rounded-sm shadow-md" alt={`${product.title} Image`} />
+                                <GatsbyImage image={image.localFile.childImageSharp.gatsbyImageData} className="w-full p-20 cursor-pointer rounded-sm shadow-md" alt={`${product.title} Image`} />
                             )
                             })}
 
@@ -35,7 +35,7 @@ const Product = ({ pageContext: { product } }) => {
                             {product.images.slice(1, 5).map((image) => {
 
                             return(
-                                <GatsbyImage image={image.localFile.childImageSharp.gatsbyImageData} className="cursor-pointer rounded-sm shadow-md" alt={`${product.title} Image`} />
+                                <GatsbyImage image={image.localFile.childImageSharp.gatsbyImageData} className="cursor-pointer rounded-sm shadow-md transform hover:scale-105" alt={`${product.title} Image`} />
                             )
                             })}
 
@@ -45,24 +45,25 @@ const Product = ({ pageContext: { product } }) => {
                     
                 </div>
 
-                <div className="flex flex-col w-full lg:w-3/8 p-5">
+                <div className="flex flex-col w-full lg:w-3/8 px-5 py-2">
 
-                    <h3 className="border-b-2 border-primary-600 pb-1 mb-5 text-3xl font-bold">Product Details</h3>
-                    <div className="flex flex-row items-center pb-1"><span className="text-xl font-medium pr-3">Vendor:</span><span>{product.vendor}</span></div>
-                    <div className="flex flex-row items-center pb-1"><span className="text-xl font-medium pr-3">Product Type:</span><span>{product.productType}</span></div>
-                    <div className="flex flex-row items-center pb-3"><span className="text-xl font-medium pr-3">Model:</span><span>{product.id}</span></div>
+                    <h3 className="border-b-2 border-primary-600 pt-2 mb-3 text-2xl font-bold">Product Details</h3>
+                            <div className="flex flex-row items-center"><span className="text-xl font-semibold pr-2">Vendor: </span><span className="text-xl">{product.vendor}</span></div> 
+                            <div className="flex flex-row items-center"><span className="text-xl font-semibold pr-2">Product Type: </span><span className="text-xl">{product.productType}</span></div>
 
-                    <h3 className="border-b-2 border-primary-600 py-1 mb-5 text-3xl font-bold">Product Description</h3>
+                            {product.variants.map((variant) => {
+                                return(
+                                    <React.Fragment>
+                                        <div className="flex flex-row items-center"><span className="text-xl font-semibold pr-2">Model / SKU: </span><span className="text-xl">{variant.sku}</span></div>
+                                    </React.Fragment>
+                                )
+                            })}   
 
-                    <div dangerouslySetInnerHTML={{__html: `${product.descriptionHtml}`}}/>
+                    <h3 className="border-b-2 border-primary-600 pt-2 mb-5 text-2xl font-bold">Product Description</h3>
 
-                    <span className="text-2xl font-medium text-green-600 text-center my-auto p-5">${product.priceRange.minVariantPrice.amount}</span>
+                    <div className="product-description" dangerouslySetInnerHTML={{__html: `${product.descriptionHtml}`}}/>
 
-                    <Button
-                        className="my-3 p-3 mx-auto text-white text-2xl font-semibold rounded-md shadow-sm bg-primary-600 hover:bg-primary-700"
-                        ariaLabel={`Add ${product.title} to the cart`}
-                        text="Add To Cart"
-                    />
+                    <ProductForm product={product}/>
                         
                 </div>  
                 
@@ -70,7 +71,7 @@ const Product = ({ pageContext: { product } }) => {
 
                 <Tabs className="flex flex-col text-center md:text-left md:p-5">
 
-                    <TabList className="md:border-b-2 md:border-primary-600 pt-5 mb-5 text-3xl font-bold flex flex-col md:flex-row cursor-pointer">
+                    <TabList className="md:border-b-2 md:border-primary-600 mb-5 text-3xl font-bold flex flex-col md:flex-row cursor-pointer">
 
                         <Tab className="flex flex-grow"><h4 className="m-auto text-2xl p-2">Product Specs</h4></Tab>
                         <Tab className="flex flex-grow"><h4 className="m-auto text-2xl p-2">Shipping</h4></Tab>
@@ -79,19 +80,19 @@ const Product = ({ pageContext: { product } }) => {
 
                     </TabList>
          
-                    <TabPanel className="text-xl">
-                            Product Specifications
+                    <TabPanel className="text-xl flex flex-col pl-1">
+                        <div className="product-specs text-left p-2" dangerouslySetInnerHTML={{__html: `${product.descriptionHtml}`}}/>        
                     </TabPanel>
 
-                    <TabPanel className="text-xl">
+                    <TabPanel className="text-xl flex flex-col pl-1">
                             Shipping Information
                     </TabPanel>
 
-                    <TabPanel className="text-xl">
+                    <TabPanel className="text-xl flex flex-col pl-1">
                             Warranty Information
                     </TabPanel>
 
-                    <TabPanel className="text-xl">
+                    <TabPanel className="text-xl flex flex-col pl-1">
                             Financing Options
                     </TabPanel>
 

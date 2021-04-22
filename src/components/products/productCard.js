@@ -7,7 +7,7 @@ const ProductCard = ({className, title, image, price, url, key}) => {
 
     return(
 
-        <li key={key} className={`m-2 w-auto flex flex-col items-center rounded-sm shadow-md ${className}`}>
+        <li key={key} className={`m-2 p-2 w-auto flex flex-col items-center rounded-sm shadow-md ${className}`}>
 
             <Link 
             to={`/products/${url}`}
@@ -26,10 +26,10 @@ const ProductCard = ({className, title, image, price, url, key}) => {
             
             <span className="text-center pt-3 font-bold text-xl">{title}</span>
             
-            <span className="pt-2 font-medium text-xl text-green-600">${price}</span>
+            <span className="p-3 mt-auto font-medium text-2xl text-green-600">$ {price}</span>
 
             <Button
-                className="my-3 p-2 text-white font-semibold rounded-md shadow-sm bg-primary-600"
+                className="mt-auto mb-3 p-2 text-white"
                 url={`/products/${url}`}
                 ariaLabel={`Link to ${title} product page`}
                 text="View Product"

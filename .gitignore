@@ -12,9 +12,12 @@ package-lock.json
 .npm
 
 # dotenv environment variable files
-.env*
+.env
 
 # gatsby files
 .cache/
 public
+
+#GraphCMS Fragments
+graphcms-fragments
 
