@@ -18,10 +18,6 @@
         @apply text-xl leading-snug;
     }
 
-    .react-tabs__tab--selected{
-        @apply bg-primary-600 !important;
-    }
-
     .react-tabs__tab--selected>h4{
         @apply text-white;
     }
@@ -58,6 +54,10 @@
         @apply rounded-sm shadow-md m-1 list-none;
     }
 
+    .product-description li{
+        @apply py-1 text-lg;
+    }
+
     .product-description table{
         @apply hidden;
     }
@@ -90,26 +90,23 @@
         @apply bg-primary-700;
       }
 
-      .nav ::-webkit-scrollbar, .cart-overlay ::-webkit-scrollbar{
+      .navbar ::-webkit-scrollbar, .cart-overlay ::-webkit-scrollbar{
         @apply hidden;
       }
-
-      .breadcrumb__list{
-          @apply flex flex-row items-center w-full border-b p-2;
-      }
-
-      .breadcrumb__list li{
-        @apply list-none pl-2;
-    }
-
-    .breadcrumb__list li a{
-        @apply hover:text-primary-600;
-    }
 
     .ais-RefinementList-list li{
         @apply list-none;
     }
 
+}
+
+.react-tabs__tab--selected{
+    background:none!important;
+    color:white!important;
+}
+
+.react-tabs__tab--selected{
+    @apply bg-primary-600 rounded-md md:rounded-b-none !important;
 }
 
 

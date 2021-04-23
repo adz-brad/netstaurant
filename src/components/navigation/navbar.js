@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { useOnClickOutside } from '../../hooks/closeMenu'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import { NavLogo, MenuToggle, NavMenu, CartToggle, CartOverlay } from './components'
@@ -43,9 +43,10 @@ const Navbar = () => {
 	const node = useRef(); 
     useOnClickOutside(node, () => setOpen(false));
 
+
     return(
 
-		<StyledNav ref={node} className="nav flex flex-row items-center w-full bg-primary-700 px-3">
+		<StyledNav ref={node} className="navbar flex flex-row items-center w-full bg-primary-700 px-3">
 
 			<NavLogo
 				title={siteID.title}
@@ -54,10 +55,10 @@ const Navbar = () => {
 				homeUrl="/"
 			/>
 
-			<div className="flex flex-row items-center absolute right-5">
+			<div className="flex flex-row items-center absolute right-4">
 
 				<Link to="/search" alt="Product Search">
-					<Icon icon={faSearch} className="text-white text-3xl m-1"/>
+					<Icon icon={faSearch} className="text-white text-2xl lg:text-3xl m-1"/>
 				</Link>
 
 				<CartToggle open={cartOpen} setOpen={setCartOpen} />
@@ -66,7 +67,7 @@ const Navbar = () => {
 
 			</div>
 
-			<CartOverlay open={cartOpen} setOpen={setCartOpen} className="cart-overlay fixed shadow-lg rounded-sm border-2 bg-white p-3"/>
+			<CartOverlay open={cartOpen} setOpen={setCartOpen} className="cart-overlay fixed shadow-lg rounded-sm border-2 bg-white p-2 md:p-3"/>
 
 			<NavMenu open={open} setOpen={setOpen} className="shadow-lg rounded-sm border-2 bg-white p-3">			
 
@@ -77,7 +78,7 @@ const Navbar = () => {
 							<div>
 
 							<div className="border-b-2 border-primary-600">
-								<span className="text-3xl font-semibold">{menuCategory.title}</span>
+								<span className="text-2xl md:text-3xl font-semibold">{menuCategory.title}</span>
 							</div>
 
 							<div className="flex flex-col py-2">
@@ -87,7 +88,7 @@ const Navbar = () => {
 									return(
 
 										<Link className="hover:text-primary-600" to={`/${category.slug}`} alt={category.title} onClick={() => setOpen(!open)}>
-											<span className="text-2xl ml-1 font-regular">{category.title}</span>
+											<span className="text-xl md:text-2xl ml-1 font-regular">{category.title}</span>
 										</Link>
 
 									)

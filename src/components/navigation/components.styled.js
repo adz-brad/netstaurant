@@ -4,8 +4,8 @@ export const StyledToggle = styled.button`
 
 flex-direction: column;
 justify-content: space-around;
-width: 2rem;
-height: 2rem;
+width: 1.8rem;
+height: 1.8rem;
 background: transparent;
 border: none;
 cursor: pointer;
@@ -17,12 +17,12 @@ z-index: 10;
   }
 
 div {
-    width: 2rem;
-    height: 0.275rem;
+    width: 1.8rem;
+    height: 0.25rem;
     border-radius: 2px;
-    transition: all 0.3s linear;
+    transition: all 0.2s linear;
     position: relative;
-    transform-origin: 1px;
+    transform-origin: 0.5px;
 
     :first-child {
         transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
@@ -47,11 +47,11 @@ export const StyledMenu = styled.div`
 position:fixed;
 left:0;
 bottom:0;
-height:calc( 100% - 80px );
+height:calc( 100% - 70px );
 width:100%;
 max-width:350px;
-z-index:99;
-overflow:auto;
+z-index:98;
+overflow:scroll;
 transition: 0.3s ease;
 @media screen and (max-width:1024px){
 max-width:400px;
@@ -63,14 +63,14 @@ left:${({ open }) => open ? '0' : '-400px'};
 `;
 
 export const StyledCartOverlay = styled.div`
-height:calc( 100% - 80px)!important;
+height:calc( 100% - 70px)!important;
 width:100%;
 max-width:500px;
 bottom: 0;
 right:${({ open }) => open ? '0' : '-500px'};
 transition: 0.3s ease;
 z-index:99;
-overflow:auto;
+overflow:scroll;
 @media screen and (min-width:1024px){
   height:calc( 100% - 100px)!important;
   }
@@ -80,7 +80,7 @@ export const StyledNav = styled.nav`
   position:fixed;
   top:0;
   left:0;
-  height:80px;
+  height:70px;
   z-index:50;
 
   @media screen and (min-width:1024px){

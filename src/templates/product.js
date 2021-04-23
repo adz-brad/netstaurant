@@ -11,7 +11,7 @@ const Product = ({ pageContext: { product } }) => {
 
         <div className="m-1 shadow-lg rounded-sm bg-white">
 
-            <h1 className="text-4xl font-bold w-full text-center py-4">{product.title}</h1>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold w-full text-center py-4">{product.title}</h1>
 
             <div className="flex flex-col lg:flex-row py-5">     
 
@@ -19,7 +19,7 @@ const Product = ({ pageContext: { product } }) => {
 
                     <SRLWrapper>
                     
-                        <div className="w-full p-5">
+                        <div className="w-full p-2 md:p-5">
 
                             {product.images.slice(0, 1).map((image) => {
 
@@ -45,7 +45,7 @@ const Product = ({ pageContext: { product } }) => {
                     
                 </div>
 
-                <div className="flex flex-col w-full lg:w-3/8 px-5 py-2">
+                <div className="flex flex-col w-full lg:w-3/8 px-2 md:px-5 py-2">
 
                     <h3 className="border-b-2 border-primary-600 pt-2 mb-3 text-2xl font-bold">Product Details</h3>
                             <div className="flex flex-row items-center"><span className="text-xl font-semibold pr-2">Vendor: </span><span className="text-xl">{product.vendor}</span></div> 

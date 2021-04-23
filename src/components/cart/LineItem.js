@@ -13,7 +13,7 @@ const LineItem = props => {
 
   const variantImage = line_item.variant.image ? (
     <img
-      className="w-1/4"
+      className="w-1/5 md:w-1/4"
       src={line_item.variant.image.src}
       alt={`${line_item.title} Product`}
     />
@@ -30,22 +30,23 @@ const LineItem = props => {
   }
 
   return (
-    <div className="flex flex-col sm:flex-row items-center border-b-2 border-gray-400">
+
+    <div className="relative flex flex-row items-center border-b-2 border-gray-400">
 
       {variantImage}
 
-      <div className="w-full flex flex-col mx-auto px-5">
+      <div className="text-lg md:text-xl w-4/5 md:w-3/4 flex flex-col ml-auto mr-2 px-5 py-1">
 
-        <span className="text-xl font-semibold">{line_item.title}</span>
+        <span className=" font-semibold leading-tight">{line_item.title}</span>
 
-        <div className="flex flex-row items-center text-lg font-medium">
-          <span className="m-1">Quantity:</span><span>{line_item.quantity}</span>
+        <div className="flex flex-row items-center  font-medium">
+          <span className="mr-2">Quantity:</span><span>{line_item.quantity}</span>
         </div>
 
       </div>
 
-      <div className="hover:text-primary-600 cursor-pointer" onClick={handleRemove}>
-        <Icon icon={faMinusCircle} className="text-xl m-3" />
+      <div className="absolute top-50 right-0 hover:text-primary-600 cursor-pointer" onClick={handleRemove}>
+        <Icon icon={faMinusCircle} className="text-lg md:text-xl m-1" />
       </div>
 
     </div>

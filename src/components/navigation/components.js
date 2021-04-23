@@ -21,14 +21,14 @@ import LineItem from '../cart/LineItem'
                 >
 
                     <GatsbyImage 
-                        className="w-20"
+                        className="w-16 lg:w-24"
                         image={logoImage} 
                         alt={`${title} Logo`} 
                     />
 
-                    <div className="hidden sm:flex flex-col ml-3">
-                        <h1 className="text-3xl font-bold text-white leading-none">{title}</h1>
-                        <h2 className="text-lg font-semibold text-white leading-none">{caption}</h2>
+                    <div className="flex flex-col ml-3">
+                        <h1 className="text-xl lg:text-4xl font-bold text-white leading-none">{title}</h1>
+                        <h2 className="text-md lg:text-xl font-medium text-white leading-none">{caption}</h2>
                     </div>
 
 
@@ -74,7 +74,7 @@ import LineItem from '../cart/LineItem'
     const CartToggle = ({open, setOpen}) => {
 
         return(
-            <FontAwesomeIcon icon={faShoppingCart} onClick={() => setOpen(!open)} open={open} className="text-white text-3xl m-1 cursor-pointer"/>
+            <FontAwesomeIcon icon={faShoppingCart} onClick={() => setOpen(!open)} open={open} className="text-white text-2xl lg:text-3xl m-1 cursor-pointer"/>
         )
     }
 
@@ -103,8 +103,8 @@ import LineItem from '../cart/LineItem'
                 <StyledCartOverlay open={open} className={className} >
 
                     <div className="border-b-2 border-primary-600 flex flex-row items-center">        
-                        <h1 className="text-4xl font-bold pb-1">Your Cart</h1>
-                        <FontAwesomeIcon icon={faTimesCircle} onClick={() => setOpen(!open)} open={open} className="text-primary-600 text-2xl m-1 ml-auto cursor-pointer"/>
+                        <h1 className="text-3xl md:text-4xl font-bold pb-1">Your Cart</h1>
+                        <FontAwesomeIcon icon={faTimesCircle} onClick={() => setOpen(!open)} open={open} className="text-primary-600 text-xl md:text-2xl m-1 ml-auto cursor-pointer"/>
                     </div>
 
                     <div className="py-2">
@@ -113,23 +113,23 @@ import LineItem from '../cart/LineItem'
             
                     <div className="mt-auto w-full pt-3 flex flex-col items-center">
                     
-                        <div className="pr-3 py-1 flex items-center">
+                        <div className="flex items-center">
                             <span className="mr-2 text-xl font-semibold">Subtotal: </span>
                             <span className="text-xl">${checkout.subtotalPrice}</span>
                         </div>
                 
-                        <div className="pr-3 py-1 flex items-center">
+                        <div className="flex items-center">
                             <span className="mr-2 text-xl font-semibold">Taxes: </span>
                             <span className="text-xl">$ {checkout.totalTax}</span>
                         </div>
                 
-                        <div className="pr-3 py-1 flex items-center">
+                        <div className="flex items-center">
                             <span className="mr-2 text-2xl font-bold">Total: </span>
                             <span className="text-2xl font-medium">${checkout.totalPrice}</span>
                         </div>
                 
-                        <div className="mx-auto pt-7">
-                            <button className="button py-2 px-4 text-3xl text-white leading-normal" onClick={handleCheckout} disabled={checkout.lineItems.length === 0}>Checkout</button>
+                        <div className="mx-auto pt-5">
+                            <button className="button py-2 px-4 text-2xl md:text-3xl text-white leading-normal" onClick={handleCheckout} disabled={checkout.lineItems.length === 0}>Checkout</button>
                         </div>
             
                     </div>
