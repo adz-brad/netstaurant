@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import { useOnClickOutside } from '../../hooks/closeMenu'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import { NavLogo, MenuToggle, NavMenu, CartToggle, CartOverlay } from './components'
+import { StyledNav } from './components.styled'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faFacebookF as Facebook, faLinkedinIn as LinkedIn, faInstagram as Instagram, faPinterestP as Pinterest } from '@fortawesome/free-brands-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
@@ -44,7 +45,7 @@ const Navbar = () => {
 
     return(
 
-		<nav ref={node} className="nav fixed top-0 left-0 z-50 flex flex-row items-center w-full bg-primary-700 h-24 px-3">
+		<StyledNav ref={node} className="nav flex flex-row items-center w-full bg-primary-700 px-3">
 
 			<NavLogo
 				title={siteID.title}
@@ -67,7 +68,7 @@ const Navbar = () => {
 
 			<CartOverlay open={cartOpen} setOpen={setCartOpen} className="cart-overlay fixed shadow-lg rounded-sm border-2 bg-white p-3"/>
 
-			<NavMenu open={open} setOpen={setOpen} className="fixed lg:left-0 shadow-lg rounded-sm border-2 bg-white p-3">			
+			<NavMenu open={open} setOpen={setOpen} className="shadow-lg rounded-sm border-2 bg-white p-3">			
 
 					{navigation.menuCategories.map((menuCategory) => {
 
@@ -116,7 +117,7 @@ const Navbar = () => {
 
 			</NavMenu>
 
-		</nav>
+		</StyledNav>
 
     )
 }
