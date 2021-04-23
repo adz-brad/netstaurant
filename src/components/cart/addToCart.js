@@ -56,7 +56,7 @@ const ProductForm = ({ product }) => {
   return (
     <React.Fragment>
 
-        <div className="border-b-2 border-primary-600 pt-3 mb-5"/>
+        <div className="border-b-2 border-primary-700 pt-3 mb-5"/>
 
         <div className="flex flex-col md:flex-row items-center">
 
