@@ -51,7 +51,13 @@ bottom: 0;
 z-index:99;
 overflow:auto;
 transition: 0.3s ease;
-@media(max-width:1024px){
+@media screen and (max-width:1024px){
+height:calc( 100vh - 6rem);
+width:100%;
+bottom: 0;
+z-index:99;
+overflow:auto;
+transition: 0.3s ease;
 max-width:400px;
 left:${({ open }) => open ? '0' : '-400px'};
 }
