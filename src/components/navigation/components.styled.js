@@ -44,6 +44,7 @@ div {
 `;
 
 export const StyledMenu = styled.div`
+display:none;
 position:fixed;
 left:0;
 bottom:0;
@@ -55,9 +56,11 @@ overflow:scroll;
 transition: 0.3s ease;
 @media screen and (max-width:1024px){
 max-width:400px;
+display:${({ open }) => open ? 'block' : 'none'};
 left:${({ open }) => open ? '0' : '-400px'};
 }
 @media screen and (min-width:1024px){
+  display:block;
   height:calc( 100% - 100px );
 }
 `;
@@ -67,6 +70,7 @@ height:calc( 100% - 70px)!important;
 width:100%;
 max-width:500px;
 bottom: 0;
+display:${({ open }) => open ? 'block' : 'none'};
 right:${({ open }) => open ? '0' : '-500px'};
 transition: 0.3s ease;
 z-index:99;
