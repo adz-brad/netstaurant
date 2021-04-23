@@ -29,7 +29,6 @@
     "gatsby-source-shopify": "^4.3.0",
     "gatsby-transformer-sharp": "^3.3.0",
     "lodash": "^4.17.21",
-    "postcss-preset-env": "^6.7.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -37,15 +36,12 @@
     "react-instantsearch-dom": "^6.10.3",
     "react-share": "^4.4.0",
     "react-tabs": "^3.2.2",
-    "sass": "^1.32.8",
     "shopify-buy": "^2.11.0",
     "simple-react-lightbox": "^3.6.6",
     "styled-components": "^5.2.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
-    "gatsby-plugin-postcss": "^4.3.0",
-    "postcss": "^8.2.10",
     "prettier": "2.2.1",
     "tailwindcss": "^2.1.1"
   },

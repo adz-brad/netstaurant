@@ -1,23 +1,16 @@
 require('dotenv').config()
  
 module.exports = {
-  flags: {
-    FAST_DEV: true,
-    PARALLEL_SOURCING: true,
-    FAST_REFRESH: true,
-  },
   siteMetadata: {
-    title: `Gatsby React-Bootstrap Starter`,
-    description: `Adrenalize Digital - Gatsby React-Bootstrap Starter`,
-    keywords: 'Gatsy, React, Bootstrap, Starer',
-    siteUrl: 'http://localhost:8000',
+    title: `Adrenalize eCommerce Starter`,
+    description: `Adrenalize Digital - Gatsby-Tailwind-Shopify e-Commerce Starter`,
+    keywords: 'Gatsby, Tailwind, Shopify, Starter',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-source-shopify',
       options: {
