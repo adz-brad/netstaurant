@@ -23,7 +23,7 @@
     }
 
     .button{
-        @apply mx-auto font-semibold rounded-md shadow-sm bg-primary-600 hover:bg-primary-700;
+        @apply mx-auto font-semibold rounded-md shadow-sm bg-primary-700 hover:bg-primary-600;
     }
 
     .ais-SearchBox{
@@ -83,11 +83,11 @@
       }
        
       ::-webkit-scrollbar-thumb {
-        @apply bg-primary-600 rounded-lg;
+        @apply bg-primary-700 rounded-sm;
       }
       
       :-webkit-scrollbar-thumb:hover {
-        @apply bg-primary-700;
+        @apply bg-primary-600;
       }
 
       .navbar ::-webkit-scrollbar, .cart-overlay ::-webkit-scrollbar{
@@ -106,8 +106,11 @@
 }
 
 .react-tabs__tab--selected{
-    @apply bg-primary-600 rounded-md md:rounded-b-none !important;
+    @apply bg-primary-700 rounded-md md:rounded-b-none !important;
 }
+
+
+
 
 
     

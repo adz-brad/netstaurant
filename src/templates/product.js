@@ -69,9 +69,9 @@ const Product = ({ pageContext: { product } }) => {
                 
             </div>
 
-                <Tabs className="flex flex-col text-center md:text-left md:p-5">
+                <Tabs className="product-tabs flex flex-col text-center md:text-left md:p-5">
 
-                    <TabList className="md:border-b-2 md:border-primary-600 mb-5 text-3xl font-bold flex flex-col md:flex-row cursor-pointer">
+                    <TabList className="md:border-b-2 md:border-primary-700 mb-5 text-3xl font-bold flex flex-col md:flex-row">
 
                         <Tab className="flex flex-grow"><h4 className="m-auto text-2xl p-2">Product Specs</h4></Tab>
                         <Tab className="flex flex-grow"><h4 className="m-auto text-2xl p-2">Shipping</h4></Tab>
