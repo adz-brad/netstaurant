@@ -71,7 +71,7 @@ const Navbar = () => {
 
     return(
 
-		<StyledNav ref={node} className={`${navbarClasses.join(" ")} fixed top-0 left-0 z-30 transition ease-in-out duration-300 flex flex-row items-center w-full bg-primary-700 px-3`}>
+		<StyledNav ref={node} className={`${navbarClasses.join(" ")} fixed top-0 left-0 z-30 flex flex-row items-center w-full bg-primary-700 px-3`}>
 
 			<NavLogo
 				title={siteID.title}
@@ -92,9 +92,9 @@ const Navbar = () => {
 
 			</div>
 
-			<CartOverlay open={cartOpen} setOpen={setCartOpen} className="cart-overlay fixed bottom-0 w-full z-50 transition ease-in-out duration-300 overflow-y-scroll shadow-lg rounded-sm border-2 bg-white p-2 md:p-3"/>
+			<CartOverlay open={cartOpen} setOpen={setCartOpen} className="hidden cart-overlay fixed bottom-0 w-full z-50 overflow-y-scroll shadow-lg rounded-sm border-2 bg-white p-2 md:p-3"/>
 
-			<NavMenu open={open} setOpen={setOpen} className="fixed left-0 bottom-0 w-full z-40 transition ease-in-out duration-300 overflow-y-scroll shadow-lg rounded-sm border-2 bg-white p-3">			
+			<NavMenu open={open} setOpen={setOpen} className="hidden fixed left-0 bottom-0 w-full z-40 overflow-y-scroll shadow-lg rounded-sm border-2 bg-white p-3">			
 
 					{navigation.menuCategories.map((menuCategory) => {
 

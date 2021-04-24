@@ -44,8 +44,10 @@ div {
 `;
 
 export const StyledMenu = styled.div`
+display:block;
 height:calc( 100% - 70px );
 max-width:350px;
+transition: 0.3s ease;
 @media screen and (max-width:1024px){
 max-width:400px;
 left:${({ open }) => open ? '0' : '-400px'};
@@ -58,9 +60,11 @@ left:${({ open }) => open ? '0' : '-400px'};
 
 
 export const StyledCartOverlay = styled.div`
+display:block;
 height:calc( 100% - 70px)!important;
 right:${({ open }) => open ? '0' : '-500px'};
 max-width: 500px;
+transition: 0.3s ease;
 @media screen and (min-width:1024px){
   height:calc( 100% - 100px)!important;
   }
@@ -68,6 +72,7 @@ max-width: 500px;
 
 export const StyledNav = styled.nav`
   height:70px;
+  transition: 0.3s ease;
   @media screen and (min-width:1024px){
   height:100px!important;
   }
