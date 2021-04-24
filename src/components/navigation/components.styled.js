@@ -82,6 +82,7 @@ export const StyledNav = styled.nav`
   left:0;
   height:70px;
   z-index:50;
+  transition: 0.3s ease;
 
   @media screen and (min-width:1024px){
   height:100px!important;

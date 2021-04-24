@@ -43,10 +43,35 @@ const Navbar = () => {
 	const node = useRef(); 
     useOnClickOutside(node, () => setOpen(false));
 
+	const [scrolled, setScrolled] = React.useState(false);
+
+    const handleScroll = () => {
+        const offset=window.scrollY;
+        if(offset > 100){
+            setScrolled(true);
+        }
+        else{
+            setScrolled(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+    })
+
+    let navbarClasses=['navbar'];
+    if(scrolled){
+        navbarClasses.push('scrolled');
+    }
+    
+    if (typeof window !== "undefined") {
+        require("smooth-scroll")('a[href*="#"]')
+    }
+
 
     return(
 
-		<StyledNav ref={node} className="navbar flex flex-row items-center w-full bg-primary-700 px-3">
+		<StyledNav ref={node} className={`${navbarClasses.join(" ")} flex flex-row items-center w-full bg-primary-700 px-3`}>
 
 			<NavLogo
 				title={siteID.title}
