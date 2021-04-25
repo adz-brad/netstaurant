@@ -65,7 +65,7 @@ const FilterToggle = ({className, open, setOpen}) => {
     return(
 
         <div onClick={() => setOpen(!open)} className={className}>
-            <span className="text-xl font-semibold ml-auto mr-2">Search Filters</span>
+            <span className="text-lg md:text-xl font-semibold ml-auto mr-2">Search Filters</span>
             <StyledToggle open={open}>
                 <FontAwesomeIcon icon={faArrowAltCircleRight} className="text-xl" />
             </StyledToggle>

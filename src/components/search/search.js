@@ -23,7 +23,7 @@ const SearchPage = () => {
 
                 <div className="m-3 pb-2 flex flex-row flex-auto items-center border-b-2 border-primary-600">
 
-                    <h1 className="text-3xl md:text-4xl font-medium">Product Search</h1>
+                    <h1 className="text-2xl md:text-3xl font-medium">Product Search</h1>
 
                     <SearchBox className="hidden sm:block w-2/5 mx-auto" translations={{placeholder: 'Type your search here...'}}/>
 
@@ -61,7 +61,7 @@ const SearchPage = () => {
 
                     <div>
 
-                        <Hits className="w-full" hitComponent={SearchHit} />
+                        <Hits className="w-full pt-2" hitComponent={SearchHit} />
                         
                     </div>            
 
