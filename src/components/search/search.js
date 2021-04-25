@@ -51,7 +51,7 @@ const SearchPage = () => {
                             <span className="text-xl font-medium">Price</span>
                             <RangeInput attribute="price" precision={2}   translations={{ submit: 'Set Price Range',}}/>
                             
-                            <Configure hitsPerPage={1} />
+                            <Configure hitsPerPage={4} />
                             
                             <ClearRefinements />
                             
