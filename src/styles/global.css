@@ -22,12 +22,32 @@
         @apply text-white;
     }
 
+    .react-tabs__tab--selected{
+        background:none!important;
+        color:white!important;
+    }
+    
+    .react-tabs__tab--selected{
+        @apply bg-primary-700  !important;
+    }
+
+    .product-tabs li{
+        @apply rounded-md md:rounded-b-none hover:bg-primary-600 hover:text-white;
+    }
+    
+    
+    @media screen and (max-width:1024px){
+        .scrolled{
+            top:-70px!important;
+        }
+    }
+
     .button{
         @apply mx-auto font-semibold rounded-md shadow-sm bg-primary-700 hover:bg-primary-600;
     }
 
     .ais-SearchBox{
-        @apply w-4/5 m-auto;
+        @apply w-full;
     }
 
     .ais-SearchBox-form{
@@ -35,7 +55,7 @@
     }
    
     .ais-SearchBox-input{
-        @apply  bg-gray-600 bg-opacity-10 rounded-md w-full text-3xl p-5;
+        @apply  bg-gray-600 bg-opacity-10 rounded-md w-full text-2xl p-5;
     }
 
     .ais-SearchBox-input{
@@ -47,7 +67,7 @@
     }
    
     .ais-Hits-list{
-        @apply  grid grid-cols-5 gap-0.5;
+        @apply  grid grid-cols-1 gap-0.5;
     }
 
     .ais-Hits-item{
@@ -98,22 +118,34 @@
         @apply list-none;
     }
 
-}
-
-.react-tabs__tab--selected{
-    background:none!important;
-    color:white!important;
-}
-
-.react-tabs__tab--selected{
-    @apply bg-primary-700 rounded-md md:rounded-b-none !important;
-}
-
-
-@media screen and (max-width:1024px){
-    .scrolled{
-        top:-70px!important;
+    .ais-RefinementList-label{
+        @apply flex flex-row items-center;
     }
+
+    .ais-RefinementList input[type="checkbox"]{
+        @apply w-4 h-4 rounded-md cursor-pointer mr-2;
+    }
+
+    .ais-RefinementList-labelText{
+        @apply text-base;
+      }
+    
+    .ais-RefinementList-count{
+        @apply px-2 rounded-3xl leading-relaxed text-xs font-semibold text-black bg-gray-200 bg-opacity-50 ml-3;
+    }
+
+    .ais-RefinementList-showMore{
+        @apply button rounded-sm text-white px-2 py-1 text-sm my-2;
+    }
+
+    .ais-RangeInput-input{
+        @apply outline-black;
+    }
+
+    
+
+    
+
 }
 
 

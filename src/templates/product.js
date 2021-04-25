@@ -73,10 +73,10 @@ const Product = ({ pageContext: { product } }) => {
 
                     <TabList className="md:border-b-2 md:border-primary-700 mb-5 text-3xl font-bold flex flex-col md:flex-row">
 
-                        <Tab className="flex flex-grow"><h4 className="m-auto text-2xl p-2">Product Specs</h4></Tab>
-                        <Tab className="flex flex-grow"><h4 className="m-auto text-2xl p-2">Shipping</h4></Tab>
-                        <Tab className="flex flex-grow"><h4 className="m-auto text-2xl p-2">Warranty</h4></Tab>
-                        <Tab className="flex flex-grow"><h4 className="m-auto text-2xl p-2">Financing</h4></Tab>
+                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2">Product Specs</h4></Tab>
+                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2">Shipping</h4></Tab>
+                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2">Warranty</h4></Tab>
+                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2">Financing</h4></Tab>
 
                     </TabList>
          

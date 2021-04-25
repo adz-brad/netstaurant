@@ -5,7 +5,7 @@ const SearchPage = () => {
 
     return(
 
-        <div className="absolute bottom-0 right-0 w-full h-full">
+        <div className="w-full h-full m-0">
 
             <Search/>
 

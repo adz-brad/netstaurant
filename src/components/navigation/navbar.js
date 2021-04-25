@@ -92,9 +92,9 @@ const Navbar = () => {
 
 			</div>
 
-			<CartOverlay open={cartOpen} setOpen={setCartOpen} className="hidden cart-overlay fixed bottom-0 w-full z-50 overflow-y-scroll shadow-lg rounded-sm border-2 bg-white p-2 md:p-3"/>
+			<CartOverlay open={cartOpen} setOpen={setCartOpen} className="hidden cart-overlay fixed bottom-0 w-full z-50 shadow-lg rounded-sm border-2 bg-white p-2 md:p-3"/>
 
-			<NavMenu open={open} setOpen={setOpen} className="hidden fixed left-0 bottom-0 w-full z-40 overflow-y-scroll shadow-lg rounded-sm border-2 bg-white p-3">			
+			<NavMenu open={open} setOpen={setOpen} className="hidden fixed left-0 bottom-0 w-full z-40 shadow-lg rounded-sm border-2 bg-white p-3">			
 
 					{navigation.menuCategories.map((menuCategory) => {
 

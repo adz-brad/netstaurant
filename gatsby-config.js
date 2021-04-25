@@ -1,6 +1,10 @@
 require('dotenv').config()
  
 module.exports = {
+  flags: {
+    FAST_DEV: true,
+    FAST_REFRESH: true,
+  },
   siteMetadata: {
     title: `Adrenalize eCommerce Starter`,
     description: `Adrenalize Digital - Gatsby-Tailwind-Shopify e-Commerce Starter`,
