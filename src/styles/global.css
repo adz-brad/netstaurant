@@ -5,7 +5,6 @@
 @tailwind utilities;
 
 
-
     *:focus{
         outline-color: black;
     }
@@ -67,7 +66,7 @@
     }
    
     .ais-Hits-list{
-        @apply  grid grid-cols-1 sm:grid-cols-2 xxl:grid-cols-3 gap-0.5;
+        @apply  grid grid-cols-1 sm:grid-cols-2 xxl:grid-cols-3 sm:gap-0.5;
     }
 
     .ais-Hits-item{

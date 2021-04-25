@@ -23,17 +23,17 @@ const SearchPage = () => {
 
                 <div className="m-3 pb-2 flex flex-row flex-auto items-center border-b-2 border-primary-600">
 
-                    <h1 className="text-2xl md:text-3xl font-medium">Product Search</h1>
+                    <h1 className="text-2xl md:text-3xl font-medium sm:w-2/5">Product Search</h1>
 
-                    <SearchBox className="hidden sm:block w-2/5 mx-auto" translations={{placeholder: 'Type your search here...'}}/>
+                    <SearchBox className="hidden sm:block mx-auto" translations={{placeholder: 'Type your search here...'}}/>
 
-                    <FilterToggle open={filterOpen} setOpen={setFilterOpen} className="flex flex-row items-center ml-auto sm:w-1/5 cursor-pointer"/>
+                    <FilterToggle open={filterOpen} setOpen={setFilterOpen} className="flex flex-row items-center ml-auto sm:w-2/5 cursor-pointer"/>
                         
                 </div>
 
-                <div className="flex flex-col items-center p-2">
+                <div className="flex flex-col items-center sm:p-2">
 
-                        <SearchBox className="sm:hidden" translations={{placeholder: 'Type your search here...'}}/>
+                        <SearchBox className="sm:hidden px-2" translations={{placeholder: 'Type your search here...'}}/>
                 
                         <FilterOverlay className="hidden absolute left-0 z-20 shadow-lg rounded-sm border-2 bg-white p-3 flex flex-col" open={filterOpen} setOpen={setFilterOpen}>
                             
