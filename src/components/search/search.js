@@ -23,7 +23,7 @@ const SearchPage = () => {
 
                 <div className="m-3 pb-2 flex flex-row flex-auto items-center border-b-2 border-primary-600">
 
-                    <h1 className="text-4xl font-medium w-auto">Product Search</h1>
+                    <h1 className="text-3xl md:text-4xl font-medium">Product Search</h1>
 
                     <SearchBox className="hidden sm:block w-2/5 mx-auto" translations={{placeholder: 'Type your search here...'}}/>
 
@@ -38,7 +38,7 @@ const SearchPage = () => {
                         <FilterOverlay className="hidden absolute left-0 z-20 shadow-lg rounded-sm border-2 bg-white p-3 flex flex-col" open={filterOpen} setOpen={setFilterOpen}>
                             
                             <div className="w-full border-b-2 border-primary-600 mb-2">
-                                <span className="text-3xl font-medium">Search Filters</span>
+                                <span className="text-2xl sm:text-3xl font-medium">Search Filters</span>
                                 <FontAwesomeIcon icon={faTimesCircle} onClick={() => setFilterOpen(!filterOpen)} className="text-primary-600 text-xl md:text-2xl m-1 absolute right-2 cursor-pointer"/>
                             </div>  
 
@@ -49,9 +49,9 @@ const SearchPage = () => {
                             <RefinementList attribute="productType" limit={5} showMore={true} transformItems={items => orderBy(items, "label", "asc")}/> 
                             
                             <span className="text-xl font-medium">Price</span>
-                            <RangeInput attribute="price" precision={2} />
+                            <RangeInput attribute="price" precision={2}   translations={{ submit: 'Set Price Range',}}/>
                             
-                            <Configure hitsPerPage={20} />
+                            <Configure hitsPerPage={1} />
                             
                             <ClearRefinements />
                             
@@ -62,11 +62,12 @@ const SearchPage = () => {
                     <div>
 
                         <Hits className="w-full" hitComponent={SearchHit} />
-                        <Pagination/>
-    
-                    </div>
+                        
+                    </div>            
 
                 </div>
+
+                <Pagination/>
 
             </InstantSearch>
 
