@@ -142,7 +142,8 @@
     }
 
     .ais-RangeInput-input{
-        @apply border border-black rounded-sm px-2;
+        @apply border border-black rounded-sm px-2 my-1;
+        max-width:60px;
     }
 
     .ais-ClearRefinements-button{
@@ -165,9 +166,34 @@
         @apply hidden;
     }
 
-    .ais-Pagination-item--previousPage, .ais-Pagination-item--nextPage{
-        @apply mx-2;
+    li.ais-Pagination-item a{
+        @apply text-2xl mx-1 hover:text-primary-600;
     }
+
+    li.ais-Pagination-item--disabled, li.ais-Pagination-item--nextPage, li.ais-Pagination-item--previousPage{
+        @apply mb-1;
+    }
+
+    li.ais-Pagination-item--disabled span, li.ais-Pagination-item--previousPage span, li.ais-Pagination-item--previousPage a, li.ais-Pagination-item--nextPage span, li.ais-Pagination-item--nextPage a{
+        @apply text-4xl font-semibold;
+    }
+
+    a.ais-Pagination-link--selected{
+        @apply text-primary-700 font-semibold;
+    }
+
+    .ais-PoweredBy{
+        @apply flex flex-row items-center mt-2;
+    }
+
+    .ais-PoweredBy-text{
+        @apply text-sm font-medium mr-1;
+    }
+
+    .ais-PoweredBy-logo{
+        width:80px;
+    }
+
 
 
 

@@ -23,7 +23,7 @@ const SearchPage = () => {
 
                 <div className="m-3 pb-2 flex flex-row flex-auto items-center border-b-2 border-primary-600">
 
-                    <h1 className="text-2xl md:text-3xl font-medium sm:w-2/5">Product Search</h1>
+                    <h1 className="text-2xl md:text-4xl font-medium sm:w-2/5">Product Search</h1>
 
                     <SearchBox className="hidden sm:block mx-auto" translations={{placeholder: 'Type your search here...'}}/>
 
