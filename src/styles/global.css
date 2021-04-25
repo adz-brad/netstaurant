@@ -162,12 +162,12 @@
         @apply list-none;
     }
 
-    .ais-Pagination-item--firstPage, .ais-Pagination-item--disabled{
+    .ais-Pagination-item--firstPage {
         @apply hidden;
     }
 
     .ais-Pagination-item--previousPage, .ais-Pagination-item--nextPage{
-        @apply mx-5;
+        @apply mx-2;
     }
 
 
