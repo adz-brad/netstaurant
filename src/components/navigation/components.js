@@ -2,11 +2,19 @@ import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { StyledToggle, StyledMenu, StyledCartOverlay } from './components.styled';
+import reduce from 'lodash/reduce'
 import { bool, func } from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import StoreContext from '../context/StoreContext'
 import LineItem from '../cart/LineItem'
+
+const useQuantity = () => {
+	const { store: {checkout} } = useContext(StoreContext)
+	const items = checkout ? checkout.lineItems : []
+	const total = reduce(items, (acc, item) => acc + item.quantity, 0)
+	return [total !== 0, total]
+}
   
     const NavLogo = ( { homeUrl, title, caption, logoImage }) => {
 
@@ -73,8 +81,21 @@ import LineItem from '../cart/LineItem'
 
     const CartToggle = ({open, setOpen}) => {
 
+        const [hasItems, quantity] = useQuantity()
+
         return(
-            <FontAwesomeIcon icon={faShoppingCart} onClick={() => setOpen(!open)} open={open} className="text-white text-2xl lg:text-3xl m-1 cursor-pointer"/>
+
+            <div className="relative flex flex-row items-center justify-center w-8">
+
+            <FontAwesomeIcon icon={faShoppingCart} onClick={() => setOpen(!open)} open={open} className="text-white text-2xl lg:text-3xl m-1 cursor-pointer absolute"/>
+            
+            {hasItems &&
+                <div className="absolute mb-5 -right-1 z-20 bg-white border border-primary-600 shadow-md rounded-full leading-none px-1 text-xs font-bold text-primary-700">
+                    {quantity}
+                </div>
+            }
+
+            </div>
         )
     }
 

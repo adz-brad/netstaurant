@@ -9,8 +9,8 @@ const Collection = ({ pageContext: { collection } } ) => {
         <div className="p-2 lg:p-4 divide-primary-600 divide-y-2 mx-auto w-full">
 
             <div className="pb-1">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium pb-2">{collection.title}</h1>
-                <p className="text-lg">{collection.description}</p>
+                <h1 className="text-2xl md:text-3xl lg:text-5xl font-medium pb-2">{collection.title}</h1>
+                <p className="text-base md:text-lg leading-snug">{collection.description}</p>
             </div>
 
             <ProductGrid>

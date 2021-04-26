@@ -15,7 +15,6 @@ function Layout({ children, pageContext: { page } }) {
         <PageWrapper>
           {children}
         </PageWrapper>
-        
 
         <Footer>
         </Footer>

@@ -1,8 +1,7 @@
 import React, { useState, useContext, useEffect, useCallback } from 'react'
-import find from 'lodash/find'
-import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
 import StoreContext from '../context/StoreContext'
+import { toast } from 'react-toastify';
 
 const ProductForm = ({ product }) => {
   const {
@@ -43,8 +42,22 @@ const ProductForm = ({ product }) => {
     setQuantity(target.value)
   }
 
+  const productAdded = () => {
+    
+    toast("Product Added To Cart", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      progress: undefined,
+    });
+  }
+
   const handleAddToCart = () => {
-    addVariantToCart(productVariant.shopifyId, quantity)
+    addVariantToCart(productVariant.shopifyId, quantity);
+    productAdded();
   }
 
   const price = Intl.NumberFormat(undefined, {
@@ -53,12 +66,13 @@ const ProductForm = ({ product }) => {
     style: 'currency',
   }).format(variant.price)
 
+
   return (
     <React.Fragment>
 
-        <div className="border-b-2 border-primary-700 pt-3 mb-5"/>
+        <div className=" pt-3 mb-2"/>
 
-        <div className="flex flex-col md:flex-row items-center">
+        <div className="flex flex-col shadow-md rounded-sm px-3 py-1 md:flex-row items-center">
 
             <div className="flex flex-col">
 
@@ -93,7 +107,7 @@ const ProductForm = ({ product }) => {
         >
             Add to Cart
         </button>
-
+        
         {!available && <p>This Product is out of Stock!</p>}
         </div>
     </React.Fragment>

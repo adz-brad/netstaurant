@@ -11,15 +11,16 @@ const Product = ({ pageContext: { product } }) => {
 
         <div className="m-1 shadow-lg rounded-sm bg-white">
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold w-full text-center py-4">{product.title}</h1>
-
+            <div className="shadow-md rounded-sm py-2 px-3">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold w-full text-center py-2">{product.title}</h1>
+            </div>
             <div className="flex flex-col lg:flex-row py-5">     
 
                 <div className="gallery w-full lg:w-5/8">
 
                     <SRLWrapper>
                     
-                        <div className="w-full p-2 md:p-5">
+                        <div className="w-full p-2">
 
                             {product.images.slice(0, 1).map((image) => {
 
@@ -45,8 +46,9 @@ const Product = ({ pageContext: { product } }) => {
                     
                 </div>
 
-                <div className="flex flex-col w-full lg:w-3/8 px-2 md:px-5 py-2">
+                <div className="flex flex-col w-full lg:w-3/8 p-2">
 
+                    <div className="shadow-md rounded-sm py-2 px-3">
                     <h3 className="border-b-2 border-primary-600 pt-2 mb-3 text-2xl font-bold">Product Details</h3>
                             <div className="flex flex-row items-center"><span className="text-xl font-semibold pr-2">Vendor: </span><span className="text-xl">{product.vendor}</span></div> 
                             <div className="flex flex-row items-center"><span className="text-xl font-semibold pr-2">Product Type: </span><span className="text-xl">{product.productType}</span></div>
@@ -58,11 +60,12 @@ const Product = ({ pageContext: { product } }) => {
                                     </React.Fragment>
                                 )
                             })}   
-
+                    </div>
+                    <div className="shadow-md rounded-sm py-2 px-3">
                     <h3 className="border-b-2 border-primary-600 pt-2 mb-5 text-2xl font-bold">Product Description</h3>
 
-                    <div className="product-description" dangerouslySetInnerHTML={{__html: `${product.descriptionHtml}`}}/>
-
+                    <div className="product-description " dangerouslySetInnerHTML={{__html: `${product.descriptionHtml}`}}/>
+                    </div>
                     <ProductForm product={product}/>
                         
                 </div>  
@@ -71,7 +74,7 @@ const Product = ({ pageContext: { product } }) => {
 
                 <Tabs className="product-tabs flex flex-col text-center md:text-left md:p-5">
 
-                    <TabList className="md:border-b-2 md:border-primary-700 mb-5 text-3xl font-bold flex flex-col md:flex-row">
+                    <TabList className="md:border-b-2 md:border-primary-700 mb-5 shadow-md rounded-sm p-2 text-3xl font-bold flex flex-col md:flex-row">
 
                         <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2">Product Specs</h4></Tab>
                         <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2">Shipping</h4></Tab>
@@ -80,19 +83,19 @@ const Product = ({ pageContext: { product } }) => {
 
                     </TabList>
          
-                    <TabPanel className="text-xl flex flex-col pl-1">
+                    <TabPanel className="tab-panel text-xl flex flex-col shadow-lg rounded-sm p-2">
                         <div className="product-specs text-left p-2" dangerouslySetInnerHTML={{__html: `${product.descriptionHtml}`}}/>        
                     </TabPanel>
 
-                    <TabPanel className="text-xl flex flex-col pl-1">
+                    <TabPanel className="tab-panel text-xl flex flex-col shadow-md rounded-sm p-2">
                             Shipping Information
                     </TabPanel>
 
-                    <TabPanel className="text-xl flex flex-col pl-1">
+                    <TabPanel className="tab-panel text-xl flex flex-col shadow-md rounded-sm p-2">
                             Warranty Information
                     </TabPanel>
 
-                    <TabPanel className="text-xl flex flex-col pl-1">
+                    <TabPanel className="tab-panel text-xl flex flex-col shadow-md rounded-sm p-2">
                             Financing Options
                     </TabPanel>
 
