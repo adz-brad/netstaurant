@@ -52,6 +52,7 @@ const ProductForm = ({ product }) => {
       pauseOnHover: true,
       draggable: false,
       progress: undefined,
+      className: "custom-toast",
     });
   }
 

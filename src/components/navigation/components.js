@@ -119,6 +119,8 @@ const useQuantity = () => {
             return <LineItem key={line_item.id.toString()} line_item={line_item} />
         })
 
+
+
             return(
 
                 <StyledCartOverlay open={open} className={className} >

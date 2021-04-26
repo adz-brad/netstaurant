@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import StoreContext from '../context/StoreContext'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faMinusCircle } from '@fortawesome/free-solid-svg-icons'
-
+import { toast } from 'react-toastify';
 
 const LineItem = props => {
   const { line_item } = props
@@ -25,8 +25,23 @@ const LineItem = props => {
       )
     : null
 
+    const productRemoved = () => {
+    
+      toast("Product Removed from Cart", {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        className: "custom-toast",
+      });
+    }
+
   const handleRemove = () => {
-    removeLineItem(client, checkout.id, line_item.id)
+    removeLineItem(client, checkout.id, line_item.id);
+    productRemoved();
   }
 
   return (

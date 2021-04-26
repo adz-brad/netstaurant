@@ -198,13 +198,16 @@
         width:80px;
     }
 
-    .toast-container{
-        position:fixed;
-        bottom:15px;
-        right:15px;
-        z-index:100;
-        transition: transform .6s ease-in-out;
-        animation: toast-in-right .7s;
+    .Toastify__toast-container{
+        @apply p-2 !important;
+    }
+
+    .custom-toast{
+        @apply mb-0 shadow-lg rounded-md text-white text-xl font-medium font-sans bg-primary-700 hover:bg-primary-600 min-h-0 cursor-pointer !important;
+    }
+    
+    .Toastify__close-button{
+        @apply text-white opacity-100 !important;
     }
 
 
