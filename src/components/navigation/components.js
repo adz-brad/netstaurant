@@ -35,8 +35,8 @@ const useQuantity = () => {
                     />
 
                     <div className="flex flex-col ml-3">
-                        <h1 className="text-xl lg:text-4xl font-bold text-white leading-none">{title}</h1>
-                        <h2 className="text-md lg:text-xl font-medium text-white leading-none">{caption}</h2>
+                        <h1 className="text-lg sm:text-xl lg:text-4xl font-bold text-white leading-none">{title}</h1>
+                        <h2 className="text-base sm:text-md lg:text-xl font-medium text-white leading-none">{caption}</h2>
                     </div>
 
 
