@@ -84,14 +84,14 @@ const Navbar = () => {
 
 			<div className="flex flex-row items-center absolute right-3 lg:right-6">
 
-				<Link to="/contact" alt="Contact">
+				<Link to="/contact" alt="Link to Adrenalize e-Commerce Contact Page" aria-label="Link to Adrenalize e-Commerce Contact Page">
 					<Icon icon={faCommentDots} className="text-white text-2xl lg:text-3xl m-1 lg:mx-2 transform hover:scale-105"/>
-					<span className="hidden">Contact</span>
+					<span className="hidden">Link to Adrenalize e-Commerce Contact Page</span>
 				</Link>
 
-				<Link to="/search" alt="Product Search">
+				<Link to="/search" alt="Link to Adrenalize e-Commerce Product Search Page" aria-label="Link to Adrenalize e-Commerce Product Search Page">
 					<Icon icon={faSearch} className="text-white text-2xl lg:text-3xl m-1 lg:mx-2 transform hover:scale-105"/>
-					<span className="hidden">Search</span>
+					<span className="hidden">Link to Adrenalize e-Commerce Product Search Page</span>
 				</Link>
 
 				<CartToggle open={cartOpen} setOpen={setCartOpen} />
@@ -140,10 +140,10 @@ const Navbar = () => {
 				</div>
 
 				<div className="flex flex-row items-center">
-					<a href="https://www.facebook.com" alt="Facebook" className="hover:text-primary-500 mr-2"><Icon className="filter drop-shadow-lg" icon={Facebook} size="2x"/><span className="hidden">Facebook</span></a>
-					<a href="https://www.instagram.com" alt="Instagram" className="hover:text-primary-500 mx-2"><Icon className="filter drop-shadow-lg" icon={Instagram} size="2x"/><span className="hidden">Instagram</span></a>
-					<a href="https://www.pinterest.com" alt="Pinterest" className="hover:text-primary-500 mx-2"><Icon className="filter drop-shadow-lg" icon={Pinterest} size="2x"/><span className="hidden">Pinterest</span></a>
-					<a href="https://www.linkedin.com" alt="LinkedIn" className="hover:text-primary-500 mx-2"><Icon className="filter drop-shadow-lg" icon={LinkedIn} size="2x"/><span className="hidden">LinkedIn</span></a>
+					<a href="https://www.facebook.com" alt="Link to Adrenalize e-Commerce Facebook Page" aria-label="Link to Adrenalize e-Commerce Facebook Page" className="hover:text-primary-500 mr-2"><Icon className="filter drop-shadow-lg" icon={Facebook} size="2x"/></a>
+					<a href="https://www.instagram.com" alt="Link to Adrenalize e-Commerce Instagram Page" aria-label="Link to Adrenalize e-Commerce Instagram Page" className="hover:text-primary-500 mx-2"><Icon className="filter drop-shadow-lg" icon={Instagram} size="2x"/></a>
+					<a href="https://www.pinterest.com" alt="Link to Adrenalize e-Commerce Pinterest Page" aria-label="Link to Adrenalize e-Commerce Pinterest Page" className="hover:text-primary-500 mx-2"><Icon className="filter drop-shadow-lg" icon={Pinterest} size="2x"/></a>
+					<a href="https://www.linkedin.com" alt="Link to Adrenalize e-Commerce LinkedIn Profile" aria-label="Link to Adrenalize e-Commerce LinkedIn Profile" className="hover:text-primary-500 mx-2"><Icon className="filter drop-shadow-lg" icon={LinkedIn} size="2x"/></a>
 				</div>
 
 				</div>

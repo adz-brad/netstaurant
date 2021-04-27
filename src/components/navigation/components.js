@@ -25,7 +25,7 @@ const useQuantity = () => {
                 <Link 
                     className="flex flex-row items-center"
                     to={homeUrl} 
-                    alt="Home"
+                    alt="Link to Adrenalize e-Commerce Home Page"
                 >
 
                     <GatsbyImage 
