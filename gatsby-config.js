@@ -35,16 +35,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: 'gatsby-plugin-postcss',
-        options: {
-          postCssPlugins: [require('tailwindcss')('./tailwind.config.js')],
-        },
-    },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: { tailwind: true }
-    },
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-source-shopify',
       options: {
