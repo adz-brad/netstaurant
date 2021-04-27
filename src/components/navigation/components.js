@@ -29,12 +29,12 @@ const useQuantity = () => {
                 >
 
                     <GatsbyImage 
-                        className="w-16 lg:w-24"
+                        className="w-12 sm:w-16 lg:w-24 mr-1"
                         image={logoImage} 
                         alt={`${title} Logo`} 
                     />
 
-                    <div className="flex flex-col ml-3">
+                    <div className="flex flex-col ml-2 sm:ml-3">
                         <h1 className="text-lg sm:text-xl lg:text-4xl font-bold text-white leading-none">{title}</h1>
                         <h2 className="text-base sm:text-md lg:text-xl font-medium text-white leading-none">{caption}</h2>
                     </div>
