@@ -5,210 +5,196 @@
 @tailwind utilities;
 
 
+    /* ----- BASE ----- */
+
     *:focus{
-        outline-color: black;
-    }
+        outline-color: black;}
 
     li, ul {
-        @apply list-disc list-inside;
-    }
+        @apply list-disc list-inside;}
 
     li{
-        @apply text-xl leading-snug;
-    }
+        @apply text-xl leading-snug;}
 
-    .react-tabs__tab--selected>h4{
-        @apply text-white;
-    }
-
-    .react-tabs__tab--selected{
-        background:none!important;
-        color:white!important;
-    }
-    
-    .react-tabs__tab--selected{
-        @apply bg-primary-700  !important;
-    }
-
-    .tab-panel{
-        @apply hidden;
-    }
-
-    .product-tabs li{
-        @apply rounded-md md:rounded-b-none hover:bg-primary-600 hover:text-white;
-    }
-    
-    
     @media screen and (max-width:1024px){
         .scrolled{
             top:-70px!important;
-        }
-    }
+        }}
 
     .button{
-        @apply mx-auto font-semibold rounded-md shadow-sm bg-primary-700 hover:bg-primary-600;
-    }
+        @apply mx-auto text-white font-semibold rounded-md shadow-sm bg-primary-700 hover:bg-primary-600;}
 
-    .ais-SearchBox{
-        @apply w-full;
-    }
 
-    .ais-SearchBox-form{
-        @apply w-full;
-    }
-   
-    .ais-SearchBox-input{
-        @apply  bg-gray-600 bg-opacity-10 rounded-md w-full text-2xl p-5;
-    }
-
-    .ais-SearchBox-input{
-        height:50px;
-    }
-
-    .ais-SearchBox-submit, .ais-SearchBox-resetIcon{
-        @apply  hidden;
-    }
-   
-    .ais-Hits-list{
-        @apply  grid grid-cols-1 sm:grid-cols-2 xxl:grid-cols-3 sm:gap-0.5;
-    }
-
-    .ais-Hits-item{
-        @apply rounded-sm shadow-md m-1 list-none;
-    }
+    /* ----- PRODUCTS ----- */
 
     .product-description li{
-        @apply py-1 text-lg;
-    }
+        @apply py-1 text-lg;}
 
     .product-description table{
-        @apply hidden;
-    }
+        @apply hidden;}
 
     .product-specs a, .product-specs p, .product-specs ul, .product-specs li, .product-specs img{
-        @apply hidden
-    }
+        @apply hidden}
 
     .product-specs table{
-        @apply w-full max-w-xl;
-    }
+        @apply w-full max-w-xl;}
 
     .product-specs table tbody tr{
-        @apply border-b;
-    }
+        @apply border-b;}
+
+    .react-tabs__tab--selected>h4{
+        @apply text-white;}
+
+    .react-tabs__tab--selected{
+        background:none!important;
+        color:white!important;}
+    
+    .react-tabs__tab--selected{
+        @apply bg-primary-700  !important;}
+
+    .tab-panel{
+        @apply hidden;}
+
+    .product-tabs li{
+        @apply rounded-md md:rounded-b-none hover:bg-primary-600 hover:text-white;}
+
+
+    /* ----- SCROLLBAR ----- */
 
     ::-webkit-scrollbar {
-        @apply bg-white w-2;
-      }
+        @apply bg-white w-2;}
       
-      ::-webkit-scrollbar-track {
-        @apply shadow-md;
-      }
+    ::-webkit-scrollbar-track {
+        @apply shadow-md;}
        
-      ::-webkit-scrollbar-thumb {
-        @apply bg-primary-700 rounded-sm;
-      }
+    ::-webkit-scrollbar-thumb {
+        @apply bg-primary-700 rounded-sm;}
       
-      :-webkit-scrollbar-thumb:hover {
-        @apply bg-primary-600;
-      }
+    :-webkit-scrollbar-thumb:hover {
+        @apply bg-primary-600;}
 
-      .navbar ::-webkit-scrollbar, .cart-overlay ::-webkit-scrollbar{
-        @apply hidden;
-      }
+    .navbar ::-webkit-scrollbar, .cart-overlay ::-webkit-scrollbar{
+        @apply hidden;}
+
+
+    /* ----- SEARCH ----- */
+
+    .ais-SearchBox{
+        @apply w-full;}
+
+    .ais-SearchBox-form{
+        @apply w-full;}
+   
+    .ais-SearchBox-input{
+        @apply  bg-gray-600 bg-opacity-10 rounded-md w-full text-2xl p-5;}
+
+    .ais-SearchBox-input{
+        height:50px;}
+
+    .ais-SearchBox-submit, .ais-SearchBox-resetIcon{
+        @apply  hidden;}
+   
+    .ais-Hits-list{
+        @apply  grid grid-cols-1 sm:grid-cols-2 xxl:grid-cols-3 sm:gap-0.5;}
+
+    .ais-Hits-item{
+        @apply rounded-sm shadow-md m-1 list-none;}
 
     .ais-RefinementList-list li{
-        @apply list-none;
-    }
+        @apply list-none;}
 
     .ais-RefinementList-label{
-        @apply flex flex-row items-center;
-    }
+        @apply flex flex-row items-center;}
 
     .ais-RefinementList input[type="checkbox"]{
-        @apply w-4 h-4 rounded-md cursor-pointer mr-2;
-    }
+        @apply w-4 h-4 rounded-md cursor-pointer mr-2;}
 
     .ais-RefinementList-labelText{
-        @apply text-base;
-      }
+        @apply text-base;}
     
     .ais-RefinementList-count{
-        @apply px-2 rounded-3xl leading-relaxed text-xs font-semibold text-black bg-gray-200 bg-opacity-50 ml-3;
-    }
+        @apply px-2 rounded-3xl leading-relaxed text-xs font-semibold text-black bg-gray-200 bg-opacity-50 ml-3;}
 
     .ais-RefinementList-showMore,.ais-RangeInput-submit{
-        @apply button rounded-sm text-white px-2 py-1 text-sm my-2;
-    }
+        @apply button rounded-sm text-white px-2 py-1 text-sm my-2;}
 
     .ais-RangeInput-separator{
-        @apply mx-1;
-    }
+        @apply mx-1;}
 
     .ais-RangeInput-input{
         @apply border border-black rounded-sm px-2 my-1;
-        max-width:60px;
-    }
+        max-width:60px;}
 
     .ais-ClearRefinements-button{
-        @apply button text-lg rounded-sm text-white px-2 py-1 my-2;
-    }
+        @apply button text-lg rounded-sm text-white px-2 py-1 my-2;}
 
     .ais-Pagination{
-        @apply mt-auto pt-3;
-    }
+        @apply mt-auto pt-3;}
 
     .ais-Pagination-list{
-        @apply flex flex-row items-center justify-center;
-    }
+        @apply flex flex-row items-center justify-center;}
 
     .ais-Pagination-item{
-        @apply list-none;
-    }
+        @apply list-none;}
 
     .ais-Pagination-item--firstPage {
-        @apply hidden;
-    }
+        @apply hidden;}
 
     li.ais-Pagination-item a{
-        @apply text-2xl mx-2 hover:text-primary-600;
-    }
+        @apply text-2xl mx-2 hover:text-primary-600;}
 
     li.ais-Pagination-item--disabled, li.ais-Pagination-item--nextPage, li.ais-Pagination-item--previousPage{
-        @apply mb-1 mx-1;
-    }
+        @apply mb-1 mx-1;}
 
     li.ais-Pagination-item--disabled span, li.ais-Pagination-item--previousPage span, li.ais-Pagination-item--previousPage a, li.ais-Pagination-item--nextPage span, li.ais-Pagination-item--nextPage a{
-        @apply text-4xl font-semibold;
-    }
+        @apply text-4xl font-semibold;}
 
     a.ais-Pagination-link--selected{
-        @apply text-primary-700 font-semibold;
-    }
+        @apply text-primary-700 font-semibold;}
 
     .ais-PoweredBy{
-        @apply flex flex-row items-center mt-2;
-    }
+        @apply flex flex-row items-center mt-2;}
 
     .ais-PoweredBy-text{
-        @apply text-sm font-medium mr-1;
-    }
+        @apply text-sm font-medium mr-1;}
 
     .ais-PoweredBy-logo{
-        width:80px;
-    }
+        width:80px;}
+
+
+    /* ----- TOASTS ----- */
 
     .Toastify__toast-container{
-        @apply p-2 !important;
-    }
+        @apply p-2 m-1 !important;}
 
     .custom-toast{
-        @apply mb-0 shadow-lg rounded-md text-white text-xl font-medium font-sans bg-primary-700 hover:bg-primary-600 min-h-0 cursor-pointer !important;
-    }
+        @apply  shadow-lg rounded-md text-white text-xl font-medium font-sans bg-primary-700 hover:bg-primary-600 min-h-0 cursor-pointer !important;}
     
     .Toastify__close-button{
-        @apply text-white opacity-100 !important;
-    }
+        @apply text-white opacity-100 !important;}
+
+
+    /* ----- CONTACT ----- */
+
+    .contact-form .personal{
+        @apply flex flex-col xl:flex-row xl:items-center;}
+
+    .contact-form .personal .form-input{
+        @apply w-full xl:w-1/2 ;}
+
+    .contact-form .form-input{
+        @apply px-3 py-5 ;}
+
+    .contact-form h3{
+        @apply text-2xl font-semibold px-2;}
+
+    .contact-form input, .contact-form textarea{
+        @apply w-full text-xl p-2 border-b border-primary-700 focus:border-opacity-0 ;}
+
+    .contact-form textarea{
+        resize:none;}
+
+    
 
 
 

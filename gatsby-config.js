@@ -9,8 +9,28 @@ module.exports = {
     title: `Adrenalize eCommerce Starter`,
     description: `Adrenalize Digital - Gatsby-Tailwind-Shopify e-Commerce Starter`,
     keywords: 'Gatsby, Tailwind, Shopify, Starter',
+    siteUrl: 'https://www.adrenalizedigital.ca',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Adrenalize e-Commerce',
+        short_name: `Adrenalize e-Commerce`,
+        background_color: `#111`,
+        theme_color: `#B91C1C`,
+        start_url: '/',
+        display: `standalone`,
+        cache_busting_mode: 'none',
+        icon:'src/assets/images/chefs-hat-logo.png',
+        include_favicon: true,
+        icon_options: {
+          purpose: `any maskable`,
+        },
+      },
+    },
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,

@@ -12,6 +12,11 @@
                     title
                     description
                     handle
+                    image{
+                      localFile{
+                        url
+                      }
+                    }
                     products {
                       title
                       shopifyId
@@ -31,6 +36,7 @@
                       }
                       images {
                         localFile {
+                          url
                           childImageSharp {
                             gatsbyImageData(quality: 100, layout: CONSTRAINED, placeholder: BLURRED)
                           }
@@ -83,6 +89,7 @@
                     }
                     images {
                       localFile {
+                        url
                         childImageSharp {
                           gatsbyImageData(quality: 100, layout: CONSTRAINED, placeholder: BLURRED)
                         }

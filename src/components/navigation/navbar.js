@@ -5,7 +5,7 @@ import { NavLogo, MenuToggle, NavMenu, CartToggle, CartOverlay } from './compone
 import { StyledNav } from './components.styled'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faFacebookF as Facebook, faLinkedinIn as LinkedIn, faInstagram as Instagram, faPinterestP as Pinterest } from '@fortawesome/free-brands-svg-icons'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faCommentDots } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
 
@@ -26,8 +26,10 @@ const Navbar = () => {
 	graphCmsNavigation(menuTitle: {eq: "Main Navigation"}) {
 		menuCategories {
 			title
+			id
 			categories {
 				title
+				id
 				slug
 			}
 	  	}
@@ -80,10 +82,14 @@ const Navbar = () => {
 				homeUrl="/"
 			/>
 
-			<div className="flex flex-row items-center absolute right-4">
+			<div className="flex flex-row items-center absolute right-3 lg:right-6">
+
+				<Link to="/contact" alt="Contact">
+					<Icon icon={faCommentDots} className="text-white text-2xl lg:text-3xl m-1 lg:mx-2 transform hover:scale-105"/>
+				</Link>
 
 				<Link to="/search" alt="Product Search">
-					<Icon icon={faSearch} className="text-white text-2xl lg:text-3xl m-1"/>
+					<Icon icon={faSearch} className="text-white text-2xl lg:text-3xl m-1 lg:mx-2 transform hover:scale-105"/>
 				</Link>
 
 				<CartToggle open={cartOpen} setOpen={setCartOpen} />
@@ -100,7 +106,7 @@ const Navbar = () => {
 
 						return(
 
-							<div>
+							<div key={menuCategory.id}>
 
 							<div className="border-b-2 border-primary-600">
 								<span className="text-2xl md:text-3xl font-semibold">{menuCategory.title}</span>
@@ -112,7 +118,7 @@ const Navbar = () => {
 
 									return(
 
-										<Link className="hover:text-primary-600" to={`/${category.slug}`} alt={category.title} onClick={() => setOpen(!open)}>
+										<Link key={category.id} className="hover:text-primary-600" to={`/${category.slug}`} alt={category.title} onClick={() => setOpen(!open)}>
 											<span className="text-xl md:text-2xl ml-1 font-regular">{category.title}</span>
 										</Link>
 
@@ -132,10 +138,10 @@ const Navbar = () => {
 				</div>
 
 				<div className="flex flex-row items-center">
-					<a href="" alt="" className="hover:text-primary-500 mr-2"><Icon className="filter drop-shadow-lg" icon={Facebook} size="2x"/></a>
-					<a href="" alt="" className="hover:text-primary-500 mx-2"><Icon className="filter drop-shadow-lg" icon={Instagram} size="2x"/></a>
-					<a href="" alt="" className="hover:text-primary-500 mx-2"><Icon className="filter drop-shadow-lg" icon={Pinterest} size="2x"/></a>
-					<a href="" alt="" className="hover:text-primary-500 mx-2"><Icon className="filter drop-shadow-lg" icon={LinkedIn} size="2x"/></a>
+					<a href="https://www.facebook.com" alt="Facebook" className="hover:text-primary-500 mr-2"><Icon className="filter drop-shadow-lg" icon={Facebook} size="2x"/></a>
+					<a href="https://www.instagram.com" alt="Instagram" className="hover:text-primary-500 mx-2"><Icon className="filter drop-shadow-lg" icon={Instagram} size="2x"/></a>
+					<a href="https://www.pinterest.com" alt="Pinterest" className="hover:text-primary-500 mx-2"><Icon className="filter drop-shadow-lg" icon={Pinterest} size="2x"/></a>
+					<a href="https://www.linkedin.com" alt="LinkedIn" className="hover:text-primary-500 mx-2"><Icon className="filter drop-shadow-lg" icon={LinkedIn} size="2x"/></a>
 				</div>
 
 				</div>

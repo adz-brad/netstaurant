@@ -87,10 +87,10 @@ const useQuantity = () => {
 
             <div className="relative flex flex-row items-center justify-center w-8">
 
-            <FontAwesomeIcon icon={faShoppingCart} onClick={() => setOpen(!open)} open={open} className="text-white text-2xl lg:text-3xl m-1 cursor-pointer absolute"/>
+            <FontAwesomeIcon icon={faShoppingCart} onClick={() => setOpen(!open)} open={open} className="text-white text-2xl lg:text-3xl m-1 lg:ml-3 cursor-pointer absolute transform hover:scale-105"/>
             
             {hasItems &&
-                <div className="absolute mb-5 -right-1 z-20 bg-white border border-primary-600 shadow-md rounded-full leading-none px-1 text-xs font-bold text-primary-700">
+                <div className="absolute mb-5 -right-1 z-20 bg-white border border-primary-700 shadow-md rounded-full leading-none px-1 text-xs font-bold text-primary-700 lg:leading-tight lg:px-2 lg:text-base lg:font-extrabold lg:mb-6 lg:-right-2">
                     {quantity}
                 </div>
             }
@@ -119,8 +119,6 @@ const useQuantity = () => {
             return <LineItem key={line_item.id.toString()} line_item={line_item} />
         })
 
-
-
             return(
 
                 <StyledCartOverlay open={open} className={className} >
@@ -137,19 +135,14 @@ const useQuantity = () => {
                     <div className="mt-auto w-full pt-3 flex flex-col items-center">
                     
                         <div className="flex items-center">
-                            <span className="mr-2 text-xl font-semibold">Subtotal: </span>
-                            <span className="text-xl">${checkout.subtotalPrice}</span>
+                            <span className="mr-2 text-2xl font-bold">Subtotal: </span>
+                            <span className="text-2xl font-medium">${checkout.subtotalPrice}</span>
                         </div>
-                
-                        <div className="flex items-center">
-                            <span className="mr-2 text-xl font-semibold">Taxes: </span>
-                            <span className="text-xl">$ {checkout.totalTax}</span>
+
+                        <div className="italic mt-2">
+                            Taxes + Shipping Costs calculated at checkout.
                         </div>
-                
-                        <div className="flex items-center">
-                            <span className="mr-2 text-2xl font-bold">Total: </span>
-                            <span className="text-2xl font-medium">${checkout.totalPrice}</span>
-                        </div>
+
                 
                         <div className="mx-auto pt-5">
                             <button className="button py-2 px-4 text-2xl md:text-3xl text-white leading-normal" onClick={handleCheckout} disabled={checkout.lineItems.length === 0}>Checkout</button>

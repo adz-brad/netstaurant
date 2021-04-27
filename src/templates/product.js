@@ -4,12 +4,51 @@ import ProductForm from '../components/cart/addToCart'
 import { SRLWrapper } from "simple-react-lightbox";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import Seo from '../components/seo/SEO'
 
 const Product = ({ pageContext: { product } }) => {
+
+    const sharingUrl = typeof window !== 'undefined' ? window.location.href : '';
+
+    const ProductSEO = () => {
+        
+        return(
+
+            <Seo
+            pageTitle={product.title}
+            pageDescription={product.description}
+            pageKeywords={product.tags}
+            pageImage={product.images === null ? "No Image" : `${product.images.slice(0, 1).map((image) => image.localFile.url)}`}
+            pageUrl={sharingUrl}
+          >
+
+            <script type="application/ld+json">
+              {`{
+                    "@context": "https://schema.org/", 
+                    "@type": "Product", 
+                    "name": "${product.title}",
+                    "image": "${product.images === null ? "No Image" : `${product.images.slice(0, 1).map((image) => image.localFile.url)}`}",
+                    "description": "${product.description}",
+                    "brand": "${product.vendor}",
+                    "sku": "${product.variants.slice(0, 1).map((variant) => variant.sku)}",
+                    "offers": {
+                        "@type": "Offer",
+                        "url": "${sharingUrl}",
+                        "priceCurrency": "CAD",
+                        "price": "${product.variants.slice(0, 1).map((variant) => variant.price)}"
+                    }
+                }`}
+              </script>
+
+          </Seo>
+        )
+    }
 
     return(
 
         <div className="m-1 shadow-lg rounded-sm bg-white">
+
+            <ProductSEO/>
 
             <div className="shadow-md rounded-sm py-2 px-3">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold w-full text-center py-2">{product.title}</h1>
@@ -66,6 +105,7 @@ const Product = ({ pageContext: { product } }) => {
 
                     <div className="product-description " dangerouslySetInnerHTML={{__html: `${product.descriptionHtml}`}}/>
                     </div>
+
                     <ProductForm product={product}/>
                         
                 </div>  
@@ -74,7 +114,7 @@ const Product = ({ pageContext: { product } }) => {
 
                 <Tabs className="product-tabs flex flex-col text-center md:text-left md:p-5">
 
-                    <TabList className="md:border-b-2 md:border-primary-700 mb-5 shadow-md rounded-sm p-2 text-3xl font-bold flex flex-col md:flex-row">
+                    <TabList className="md:border-b-2 md:border-primary-700 mb-5 shadow-md rounded-sm text-3xl font-bold flex flex-col md:flex-row">
 
                         <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2">Product Specs</h4></Tab>
                         <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2">Shipping</h4></Tab>

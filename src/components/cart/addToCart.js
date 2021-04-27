@@ -5,12 +5,11 @@ import { toast } from 'react-toastify';
 
 const ProductForm = ({ product }) => {
   const {
-    options,
     variants,
     variants: [initialVariant],
     priceRange: { minVariantPrice },
   } = product
-  const [variant, setVariant] = useState({ ...initialVariant })
+  const [variant] = useState({ ...initialVariant })
   const [quantity, setQuantity] = useState(1)
   const {
     addVariantToCart,
@@ -101,7 +100,7 @@ const ProductForm = ({ product }) => {
         
 
         <button
-            className="button my-3 py-2 px-3 text-white text-2xl"
+            className="button my-3 py-2 px-3 text-2xl"
             type="submit"
             disabled={!available || adding}
             onClick={handleAddToCart}
