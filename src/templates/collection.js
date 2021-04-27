@@ -35,7 +35,6 @@ const Collection = ({ pageContext: { collection } } ) => {
                     
                     <ProductCard
                         title={product.title}
-                        description={product.description}
                         image={product.images}
                         price={`${product.variants.map((variant) => variant.price )}`}
                         url={product.handle}

@@ -15,6 +15,9 @@
                     image{
                       localFile{
                         url
+                        childImageSharp {
+                          gatsbyImageData(quality: 100, layout: CONSTRAINED, placeholder: TRACED_SVG)
+                        }
                       }
                     }
                     products {
@@ -38,7 +41,7 @@
                         localFile {
                           url
                           childImageSharp {
-                            gatsbyImageData(quality: 100, layout: CONSTRAINED, placeholder: BLURRED)
+                            gatsbyImageData(quality: 100, layout: CONSTRAINED, placeholder: TRACED_SVG)
                           }
                         }
                       }
@@ -91,7 +94,7 @@
                       localFile {
                         url
                         childImageSharp {
-                          gatsbyImageData(quality: 100, layout: CONSTRAINED, placeholder: BLURRED)
+                          gatsbyImageData(quality: 100, layout: CONSTRAINED, placeholder: TRACED_SVG)
                         }
                       }
                     }
