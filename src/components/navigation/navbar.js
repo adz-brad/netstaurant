@@ -86,12 +86,10 @@ const Navbar = () => {
 
 				<Link to="/contact" alt="Link to Adrenalize e-Commerce Contact Page" aria-label="Link to Adrenalize e-Commerce Contact Page">
 					<Icon icon={faCommentDots} className="text-white text-2xl lg:text-3xl m-1 lg:mx-2 transform hover:scale-105"/>
-					<span className="hidden">Link to Adrenalize e-Commerce Contact Page</span>
 				</Link>
 
 				<Link to="/search" alt="Link to Adrenalize e-Commerce Product Search Page" aria-label="Link to Adrenalize e-Commerce Product Search Page">
 					<Icon icon={faSearch} className="text-white text-2xl lg:text-3xl m-1 lg:mx-2 transform hover:scale-105"/>
-					<span className="hidden">Link to Adrenalize e-Commerce Product Search Page</span>
 				</Link>
 
 				<CartToggle open={cartOpen} setOpen={setCartOpen} />
