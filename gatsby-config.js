@@ -22,7 +22,7 @@ module.exports = {
         start_url: '/',
         display: `standalone`,
         cache_busting_mode: 'none',
-        icon:'src/assets/images/chefs-hat-logo.png',
+        icon:'src/assets/images/adrenalize-ecomm-logo.png',
         include_favicon: true,
         icon_options: {
           purpose: `any maskable`,
