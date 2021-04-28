@@ -14,6 +14,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.15",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
@@ -33,6 +34,7 @@
     "gatsby-source-graphcms": "^2.5.1",
     "gatsby-source-shopify": "^4.3.0",
     "gatsby-transformer-sharp": "^3.3.0",
+    "isomorphic-fetch": "^3.0.0",
     "lodash": "^4.17.21",
     "postcss": "^8.2.12",
     "postcss-preset-env": "^6.7.0",

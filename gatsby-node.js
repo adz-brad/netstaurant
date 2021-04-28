@@ -100,13 +100,26 @@
                     }
                   }
                 }
+              },
+              auctionItems: allGraphCmsAuctionItem {
+                edges {
+                  item: node {
+                    productName
+                    productSlug
+                    updatedAt
+                    remoteId
+                    bids {
+                      name
+                      bidAmount
+                    }
+                  }
+                }
               }
             }
         `
     )
 
     data.collections.edges.forEach(({ collection }) => {
-
         createPage({
             component: path.resolve('./src/templates/collection.js'),
             context: {
@@ -117,7 +130,6 @@
     })
 
     data.products.edges.forEach(({ product }) => {
-
         createPage({
           component: path.resolve('./src/templates/product.js'),
           context: {
@@ -126,4 +138,15 @@
           path: `/products/${product.handle}`,
         })
     })
+
+    data.auctionItems.edges.forEach(({ item }) => {
+        createPage({
+          component: path.resolve('./src/templates/auctionItem.js'),
+          context: {
+            item,
+          },
+          path: `/auction/${item.productSlug}`,
+        })
+    })
+
  }

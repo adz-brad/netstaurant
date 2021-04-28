@@ -12,9 +12,14 @@ const Index = () => {
               url
               }
           }
+      },
+      graphCmsAuctionItem(productName: {eq: "Rice Master"}) {
+        productName
+        remoteId
       }
   }
 `)
+
 
   const sharingUrl = typeof window !== 'undefined' ? window.location.href : '';
 
@@ -28,7 +33,12 @@ const Index = () => {
               pageKeywords="Home, Adrenalize e-Commerce"
               pageImage={data.siteID.logo.localFile.url}
               pageUrl={sharingUrl}
-            />   
+            />
+
+            <div>
+              
+              
+            </div>   
                 
       </div>
 
