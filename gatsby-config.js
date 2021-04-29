@@ -18,6 +18,7 @@ module.exports = {
         name: 'Adrenalize e-Commerce',
         short_name: `Adrenalize e-Commerce`,
         background_color: `#111`,
+        lang: `en`,
         theme_color: `#B91C1C`,
         start_url: '/',
         display: `standalone`,
@@ -35,7 +36,8 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    'gatsby-plugin-postcss',
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-mdx`,
     {
       resolve: 'gatsby-source-shopify',
       options: {

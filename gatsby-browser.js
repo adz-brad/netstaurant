@@ -6,6 +6,17 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client'
 import fetch from 'isomorphic-fetch'
+import { MDXProvider } from '@mdx-js/react'
+
+const onServiceWorkerUpdateReady = () => {
+  const answer = window.confirm(
+    `This application has been updated. ` +
+      `Reload to display the latest version?`
+  )
+  if (answer === true) {
+    window.location.reload()
+  }
+}
 
 const httpLink = new HttpLink({
   uri: process.env.GATSBY_GRAPHCMS_ENDPOINT,
@@ -28,12 +39,14 @@ const wrapPageElement = ({ element, props }) => {
 const wrapRootElement = ({ element }) => {
   return (
       <ApolloProvider client={apolloClient}>
-        <SimpleReactLightbox>
-            {element}
-            <ToastContainer/>  
-        </SimpleReactLightbox>
+        <MDXProvider>
+          <SimpleReactLightbox>
+              {element}
+              <ToastContainer/>  
+          </SimpleReactLightbox>
+        </MDXProvider>
       </ApolloProvider>
   )
 }
 
-export { wrapPageElement, wrapRootElement }
+export { wrapPageElement, wrapRootElement, onServiceWorkerUpdateReady }

@@ -105,7 +105,25 @@
                 edges {
                   item: node {
                     productName
+                    auctionStart
+                    auctionEnd
                     productSlug
+                    bidIncrement
+                    productDescription{
+                      text
+                      markdownNode {
+                        childMdx {
+                          body
+                        }
+                      }
+                    }
+                    productImage{
+                      localFile{
+                        childImageSharp{
+                          gatsbyImageData(quality: 100, layout: CONSTRAINED, placeholder: TRACED_SVG)
+                        }
+                      }
+                    }
                     updatedAt
                     remoteId
                     bids {

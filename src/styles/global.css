@@ -194,8 +194,71 @@
     .contact-form textarea{
         resize:none;}
 
-    
 
+    /* ----- AUCTION ----- */
+
+    .countdown-number{
+        @apply text-3xl font-semibold mr-1 text-primary-700;
+    }
+
+    .countdown-label{
+        @apply text-2xl mr-3;
+    }
+
+
+    /* ----- LANDING ----- */
+
+    .landing{
+        position:relative;
+        height:400px;
+        width:100%;
+        padding:10px;
+    }
+
+    .landing-bg{
+        height:100%;
+        overflow:hidden;
+        border-radius:5px; 
+    }
+        
+    .landing-caption{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        width:calc( 100% - 50px);
+        height:calc( 100% - 50px);
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        background-color:rgba(17,17,17,0.7);
+        border-radius:5px;
+        box-shadow:0px 0px 40px 10px rgba(255, 255, 255, 0.5);
+    }
+
+    /* ----- CARDS ----- */
+
+    .card{
+        @apply flex flex-col items-center rounded-md shadow-lg border border-black border-opacity-10 m-4 p-3 transform hover:scale-105 h-80;
+    }
+
+    .card-header{
+        @apply text-3xl font-semibold  w-11/12 text-center pb-2;
+    }
+
+    .card-icon{
+        @apply text-8xl text-primary-500 filter drop-shadow-lg my-auto;
+    }
+
+    .card-caption{
+        @apply text-lg leading-snug font-light  pt-2 w-11/12;
+    }
+
+    .powered-by{
+        max-width:160px;
+        margin:0 10px 0 10px;
+    }
 
 
 
