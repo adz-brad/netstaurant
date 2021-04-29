@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { BgImage } from "gbimage-bridge"
 import Seo from '../components/seo/SEO'
@@ -49,9 +49,11 @@ const Index = () => {
             }
           }
       },
-      collections: allShopifyCollection {
+      collections: allShopifyCollection(
+        filter: {title: {in: ["Cooking Equipment", "Refrigeration", "Beverage", "Food Prep", "Dishwashing", "Storage", "Workspaces", "Smallwares"]}}) {
         nodes {
           title
+          handle
           image {
             localFile {
               childImageSharp {
@@ -162,6 +164,15 @@ const Index = () => {
 
                 <ProductGrid>
 
+                {data.collections.nodes.map((collection) => {
+
+                  return(
+                    <Link className="m-2 p-2 rounded-md flex flex-col items-center transform hover:scale-105" to={collection.handle} alt="">
+                        <GatsbyImage image={collection.image.localFile.childImageSharp.gatsbyImageData} className="rounded-md shadow-md w-full" alt=""/>
+                        <span className="text-xl font-medium">{collection.title}</span>
+                    </Link>
+                  )
+                })}
 
                 </ProductGrid>
                 
