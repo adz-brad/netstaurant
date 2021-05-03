@@ -51,7 +51,7 @@ const Product = ({ pageContext: { product } }) => {
             <ProductSEO/>
 
             <div className="shadow-md rounded-sm py-2 px-3">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold w-full text-center py-2">{product.title}</h1>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter w-full text-center py-2">{product.title}</h1>
             </div>
             <div className="flex flex-col lg:flex-row py-5">     
 
@@ -89,13 +89,13 @@ const Product = ({ pageContext: { product } }) => {
 
                     <div className="shadow-md rounded-sm py-2 px-3">
                     <h3 className="border-b-2 border-primary-600 pt-2 mb-3 text-2xl font-bold">Product Details</h3>
-                            <div className="flex flex-row items-center"><span className="text-xl font-semibold pr-2">Vendor: </span><span className="text-xl">{product.vendor}</span></div> 
-                            <div className="flex flex-row items-center"><span className="text-xl font-semibold pr-2">Product Type: </span><span className="text-xl">{product.productType}</span></div>
+                            <div className="flex flex-row items-center"><span className="text-xl font-semibold font-content pr-2">Vendor: </span><span className="text-xl">{product.vendor}</span></div> 
+                            <div className="flex flex-row items-center"><span className="text-xl font-semibold font-content pr-2">Product Type: </span><span className="text-xl">{product.productType}</span></div>
 
                             {product.variants.map((variant) => {
                                 return(
                                     <React.Fragment>
-                                        <div className="flex flex-row items-center"><span className="text-xl font-semibold pr-2">Model / SKU: </span><span className="text-xl">{variant.sku}</span></div>
+                                        <div className="flex flex-row items-center"><span className="text-xl font-semibold font-content pr-2">Model / SKU: </span><span className="text-xl">{variant.sku}</span></div>
                                     </React.Fragment>
                                 )
                             })}   
@@ -103,7 +103,7 @@ const Product = ({ pageContext: { product } }) => {
                     <div className="shadow-md rounded-sm py-2 px-3">
                     <h3 className="border-b-2 border-primary-600 pt-2 mb-5 text-2xl font-bold">Product Description</h3>
 
-                    <div className="product-description " dangerouslySetInnerHTML={{__html: `${product.descriptionHtml}`}}/>
+                    <div className="product-description font-content" dangerouslySetInnerHTML={{__html: `${product.descriptionHtml}`}}/>
                     </div>
 
                     <ProductForm product={product}/>

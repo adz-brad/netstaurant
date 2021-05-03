@@ -94,7 +94,7 @@ const Index = () => {
                 <div className="landing-caption">
                   <h1 className="text-white font-bold text-3xl md:text-5xl lg:text-7xl filter drop-shadow-lg mt-auto border-b-2 lg:border-b-4 border-primary-700">{landing.header}</h1> 
                   <h2 className="text-white text-center font-medium text-xl md:text-2xl lg:text-3xl filter drop-shadow-lg py-1 px-2 leading-tight">{landing.subheader}</h2>
-                  <span className="text-white font-normal text-lg md:text-xl py-4 max-w-6xl leading-tight">{landing.caption}</span>
+                  <span className="text-white font-normal text-lg md:text-xl py-4 max-w-6xl leading-tight font-content">{landing.caption}</span>
                   <Button className="my-auto px-4 py-2 lg:py-3 text-2xl lg:text-3xl font-medium shadow-lg" text={landing.buttonText} url={landing.buttonLink} />
                 </div>                      
               </BgImage>          
@@ -134,8 +134,8 @@ const Index = () => {
               <div className="p-2 lg:p-4 divide-primary-600 divide-y-2 mx-auto w-full">
 
                 <div className="pb-1">
-                    <h1 className="text-2xl md:text-3xl lg:text-5xl font-medium pb-2">Featured Products</h1>
-                    <p className="text-base md:text-lg lg:text-xl leading-snug">Check out our latest selection of featured products!</p>
+                    <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-tight pb-2">Featured Products</h1>
+                    <p className="text-base md:text-lg lg:text-xl leading-snug font-content">Check out our latest selection of featured products!</p>
                 </div>
 
                 <ProductGrid>
@@ -165,7 +165,8 @@ const Index = () => {
             <div className="p-2 lg:p-4 divide-primary-600 divide-y-2 mx-auto w-full">
 
                 <div className="pb-1">
-                    <h1 className="text-2xl md:text-3xl lg:text-5xl font-medium pb-2">Browse By Category</h1>
+                    <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-tight pb-2">Browse By Category</h1>
+                    <p className="text-base md:text-lg lg:text-xl leading-snug font-content">Browse our product listings by category.</p>
                 </div>
 
                 <ProductGrid>
@@ -177,7 +178,7 @@ const Index = () => {
                     <LazyLoad key={collection.id} overflow={true}>
                       <Link className="md:m-2 p-2 rounded-md flex flex-col items-center transform hover:scale-105" to={collection.handle} alt={`Link to ${collection.title} page`}>
                           <GatsbyImage image={collection.image.localFile.childImageSharp.gatsbyImageData} className="rounded-md shadow-md w-full" alt={`${collection.title} Image`}/>
-                          <span className="text-xl sm:text-2xl font-medium py-2">{collection.title}</span>
+                          <span className="text-xl sm:text-2xl font-semibold tracking-tight py-2">{collection.title}</span>
                       </Link>
                     </LazyLoad>
                   )

@@ -109,7 +109,7 @@ const Navbar = () => {
 							<div key={menuCategory.id}>
 
 							<div className="border-b-2 border-primary-600">
-								<span className="text-2xl md:text-3xl font-semibold">{menuCategory.title}</span>
+								<span className="text-2xl md:text-3xl font-semibold tracking-tight">{menuCategory.title}</span>
 							</div>
 
 							<div className="flex flex-col py-2">
@@ -119,7 +119,7 @@ const Navbar = () => {
 									return(
 
 										<Link key={category.id} className="hover:text-primary-600" to={`/${category.slug}`} alt={category.title} onClick={() => setOpen(!open)}>
-											<span className="text-xl md:text-2xl ml-1 font-regular">{category.title}</span>
+											<span className="text-xl md:text-2xl ml-1 font-regular font-content">{category.title}</span>
 										</Link>
 
 									)

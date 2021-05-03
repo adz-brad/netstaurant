@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import Button from '../button/button'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import Countdown from 'react-countdown'
-import { useQuery, useMutation, gql } from '@apollo/client'
+import { useQuery, gql } from '@apollo/client'
 
 const BID_QUERY = gql`
 query BidsQuery($id: ID!) {
@@ -74,9 +74,9 @@ const AuctionCard = ({ itemName, itemImage, itemLink, itemID, auctionEnd }) => {
 
             <div className="flex flex-col w-3/5">
 
-                <span className="py-2 mt-auto font-semibold text-2xl lg:text-3xl leading-tight text-center">{itemName}</span>
+                <span className="py-2 mt-auto font-bold text-2xl lg:text-3xl leading-tight text-center tracking-tight">{itemName}</span>
 
-                    <div className="flex flex-col text-3xl m-auto">
+                    <div className="flex flex-col text-3xl m-auto font-content">
                         <Countdown date={auctionEnd} renderer={renderer}/>
                     </div>
 

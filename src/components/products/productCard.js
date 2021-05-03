@@ -25,7 +25,7 @@ const ProductCard = ({className, title, image, price, url, key}) => {
 
                 </Link>
                 
-                <span className="text-center pt-3 font-semibold text-lg lg:text-xl leading-tight">{title}</span>
+                <span className="text-center pt-3 font-content text-lg lg:text-xl leading-tight">{title}</span>
                 
                 <span className="p-3 mt-auto font-medium text-xl lg:text-2xl text-green-600">$ {price}</span>
 

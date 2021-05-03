@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import Countdown from 'react-countdown'
-import { useQuery, useMutation, gql } from '@apollo/client'
+import { useQuery, gql } from '@apollo/client'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
@@ -14,13 +14,6 @@ import 'react-tabs/style/react-tabs.css';
         }
     }`;
 
-    const ADD_BID = gql`
-    mutation {
-       bids{
-           bidAmount
-       } 
-    }
-    `;
 
     const AuctionItem = ({ pageContext: { item } }) => {
 
@@ -28,14 +21,12 @@ import 'react-tabs/style/react-tabs.css';
             variables: { id: item.remoteId },
         });
 
-        const [createBid] = useMutation(ADD_BID);
-
         const currentBid = data?.bids ? ( data.bids.slice(0,1).map((bid) => ( bid.bidAmount + bidIncrement )) ) : null;
         const [bidValue, setBidValue] = useState(currentBid);
         const bidIncrement = item.bidIncrement
         const auctionEnd = item.auctionEnd;
 
-        const CompletionList = () => <span className="text-3xl font-bold text-primary-700 p-5">This Auction Has Closed</span>;
+        const CompletionList = () => <span className="text-3xl font-bold text-primary-700 p-5 font-content">This Auction Has Closed</span>;
 
         const renderer = ({ days, hours, minutes, seconds, completed }) => {
             if (completed) {
@@ -46,7 +37,7 @@ import 'react-tabs/style/react-tabs.css';
 
                     <div className="border-2 border-primary-700 rounded-md shadow-md m-2 p-5">
 
-                        <div className="flex flex-col px-5 py-2">
+                        <div className="flex flex-col px-5 py-2 font-content">
 
                             <span className="text-2xl font-semibold">Time Remaining In This Auction:</span>
 
@@ -65,12 +56,12 @@ import 'react-tabs/style/react-tabs.css';
 
                         <div className="flex flex-row items-center px-5 py-2">
                             <span className="text-3xl font-semibold mr-2">Current Bid:</span>
-                            <span className="text-2xl font-medium">{bidsLoading ? ' Loading Current Bid' : null}</span>
-                            <span className="text-2xl font-medium">{bidsError ? 'Error Loading Bid' : null}</span>
+                            <span className="text-2xl font-medium font-content">{bidsLoading ? ' Loading Current Bid' : null}</span>
+                            <span className="text-2xl font-medium font-content">{bidsError ? 'Error Loading Bid' : null}</span>
 
                             {data?.bids ? (
                                 <React.Fragment>           
-                                    {data.bids.slice(0,1).map((bid) => ( <span className="text-3xl font-medium">$ {bid.bidAmount}</span> ))}
+                                    {data.bids.slice(0,1).map((bid) => ( <span className="text-3xl font-medium font-content">$ {bid.bidAmount}</span> ))}
                                 </React.Fragment> 
                             ) : null }
 
@@ -84,11 +75,11 @@ import 'react-tabs/style/react-tabs.css';
 
                             <div className="flex flex-row items-center w-full">
 
-                                <span className="font-medium mr-1">$</span>
+                                <span className="font-medium mr-1 font-content">$</span>
 
                                 <input 
                                     required
-                                    className="p-2 border-b border-primary-700 focus:border-opacity-0 mr-2 w-2/3"
+                                    className="p-2 border-b border-primary-700 focus:border-opacity-0 mr-2 w-2/3 font-content"
                                     placeholder="Your Bid"
                                     type="number"
                                     min={currentBid}
@@ -99,7 +90,7 @@ import 'react-tabs/style/react-tabs.css';
 
                             </div>
 
-                            <div className="flex flex-row items-center font-medium text-lg ml-5">
+                            <div className="flex flex-row items-center font-medium text-lg ml-5 font-content">
                                 <span className="mr-1">Current Bid Increment:</span>
                                 <span>${bidIncrement}</span>
                             </div>
@@ -120,7 +111,7 @@ import 'react-tabs/style/react-tabs.css';
         <div className="flex flex-col m-2 m-2 shadow-md rounded-md">
 
             <div className="shadow-md rounded-sm py-2 w-3/4 mx-auto">
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold w-full text-center py-2">{item.productName}</h1>
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold w-full text-center py-2 tracking-tighter">{item.productName}</h1>
             </div>
 
             <div className="flex flex-row w-3/4 mx-auto">         

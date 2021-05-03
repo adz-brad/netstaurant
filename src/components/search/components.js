@@ -22,18 +22,18 @@ const SearchHit = ({ hit: {objectID, title, handle, sku, productType, vendor, im
 
             <div className="flex flex-col w-3/5">
 
-                <span className="py-2 font-semibold text-lg lg:text-xl leading-tight">{title}</span>
+                <span className="py-2 font-bold text-lg lg:text-xl tracking-tighter leading-tight">{title}</span>
 
-                <div className="flex flex-row items-center text-base lg:text-lg leading-tight">
-                    <span className="font-medium mr-1">Product Type:</span><span>{productType}</span>
+                <div className="flex flex-row items-center text-base lg:text-lg font-content">
+                    <span className="font-semibold tracking-tight mr-1">Product Type:</span><span className="font-content">{productType}</span>
                 </div>
 
-                <div className="flex flex-row items-center text-base lg:text-lg leading-tight">
-                    <span className="font-medium mr-1">Vendor:</span><span>{vendor}</span>
+                <div className="flex flex-row items-center text-base lg:text-lg font-content">
+                    <span className="font-semibold tracking-tight mr-1">Vendor:</span><span className="font-content">{vendor}</span>
                 </div>
 
-                <div className="flex flex-row items-center text-base lg:text-lg leading-tight pb-2">
-                    <span className="font-medium mr-1">Model/Sku:</span><span>{sku}</span>
+                <div className="flex flex-row items-center text-base lg:text-lg font-content pb-2">
+                    <span className="font-semibold tracking-tight mr-1">Model/Sku:</span><span className="font-content">{sku}</span>
                 </div>
 
                 <Button
@@ -70,7 +70,7 @@ const FilterToggle = ({className, open, setOpen}) => {
     return(
 
         <div onClick={() => setOpen(!open)} onkeydown={() => setOpen(!open)} role="button" aria-pressed="false" tabindex="0" className={className}>
-            <span className="text-lg md:text-xl font-semibold ml-auto mr-2">Search Filters</span>
+            <span className="text-lg md:text-xl font-semibold ml-auto mr-2 tracking-tight">Search Filters</span>
             <StyledToggle open={open}>
                 <FontAwesomeIcon icon={faArrowAltCircleRight} className="text-xl" />
             </StyledToggle>

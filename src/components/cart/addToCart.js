@@ -78,10 +78,10 @@ const ProductForm = ({ product }) => {
 
                 <div className="flex flex-row items-center">
 
-                    <label className="text-2xl font-medium mr-2 py-1" htmlFor="quantity">Quantity:</label>
+                    <label className="text-2xl font-medium mr-2 py-1 font-content" htmlFor="quantity">Quantity:</label>
                     
                     <input
-                        className="w-20 p-1 text-2xl border-black border-b text-center"
+                        className="w-20 p-1 font-content text-2xl border-black border-b text-center"
                         type="number"
                         id="quantity"
                         name="quantity"

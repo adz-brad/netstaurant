@@ -1,11 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+
+    @font-face{
+        font-family: Poppins;
+        src: url(/fonts/poppins/Poppins-Regular.ttf) format ("ttf");
+    }
+
+    @font-face{
+        font-family: Kanit;
+        src:url(/fonts/kanit/Kanit-Regular.ttf) format ("ttf");
+    }
+
+}
+
 
     /* ----- BASE ----- */
+
+    .font-headers{
+        font-family: Kanit, sans-serif;
+    }
+
+    .font-content{
+        font-family: Poppins, sans-serif;
+    }
 
     *:focus{
         outline-color: black;}
@@ -53,7 +73,7 @@
         @apply bg-primary-700  !important;}
 
     .tab-panel{
-        @apply hidden;}
+        @apply hidden font-content;}
 
     .product-tabs li{
         @apply rounded-md md:rounded-b-none hover:bg-primary-600 hover:text-white;}
@@ -86,7 +106,7 @@
         @apply w-full;}
    
     .ais-SearchBox-input{
-        @apply  bg-gray-600 bg-opacity-10 rounded-md w-full text-2xl p-5;}
+        @apply  bg-gray-600 bg-opacity-10 rounded-md w-full text-2xl p-5 font-content;}
 
     .ais-SearchBox-input{
         height:50px;}
@@ -104,7 +124,7 @@
         @apply list-none;}
 
     .ais-RefinementList-label{
-        @apply flex flex-row items-center;}
+        @apply flex flex-row items-center font-content;}
 
     .ais-RefinementList input[type="checkbox"]{
         @apply w-4 h-4 rounded-md cursor-pointer mr-2;}
@@ -168,7 +188,7 @@
         @apply p-2 m-1 !important;}
 
     .custom-toast{
-        @apply  shadow-lg rounded-md text-white text-xl font-medium font-sans bg-primary-700 hover:bg-primary-600 min-h-0 cursor-pointer !important;}
+        @apply  shadow-lg rounded-md text-white text-xl font-medium bg-primary-700 hover:bg-primary-600 min-h-0 cursor-pointer !important;}
     
     .Toastify__close-button{
         @apply text-white opacity-100 !important;}
@@ -189,7 +209,7 @@
         @apply text-2xl font-semibold px-2;}
 
     .contact-form input, .contact-form textarea{
-        @apply w-full text-xl p-2 border-b border-primary-700 focus:border-opacity-0 ;}
+        @apply w-full text-xl p-2 border-b border-primary-700 focus:border-opacity-0 font-content;}
 
     .contact-form textarea{
         resize:none;}
@@ -250,13 +270,13 @@
         @apply flex flex-col items-center rounded-md shadow-lg border border-black border-opacity-10 m-1 xl:m-2 p-3 transform hover:scale-105 h-40 sm:h-60 xl:h-80;}
 
     .card-header{
-        @apply text-xl md:text-2xl xl:text-3xl font-semibold  w-11/12 text-center pb-2;}
+        @apply text-xl md:text-2xl xl:text-3xl font-bold tracking-tight w-11/12 text-center pb-2;}
 
     .card-icon{
         @apply text-6xl lg:text-7xl xl:text-8xl text-primary-500 filter drop-shadow-lg my-auto;}
 
     .card-caption{
-        @apply hidden sm:flex text-lg leading-tight pt-2 w-11/12;}
+        @apply hidden sm:flex text-lg leading-tight font-content pt-2 w-11/12;}
 
     .powered-by{
         max-width:160px;

@@ -35,9 +35,9 @@ const useQuantity = () => {
                         loading="eager" 
                     />
 
-                    <div className="flex flex-col ml-2 sm:ml-3">
-                        <h1 className="text-lg sm:text-xl lg:text-4xl font-bold text-white leading-none">{title}</h1>
-                        <h2 className="text-base sm:text-md lg:text-xl font-medium text-white leading-none">{caption}</h2>
+                    <div className="flex flex-col ml-1 sm:ml-3">
+                        <h1 className="text-lg sm:text-xl lg:text-4xl font-headers font-bold text-white leading-none tracking-tight">{title}</h1>
+                        <h2 className="text-base sm:text-md lg:text-xl font-content font-medium text-white leading-none">{caption}</h2>
                     </div>
 
 
@@ -91,7 +91,7 @@ const useQuantity = () => {
             <FontAwesomeIcon icon={faShoppingCart} onClick={() => setOpen(!open)} open={open} className="text-white text-2xl lg:text-3xl m-1 lg:ml-3 cursor-pointer absolute transform hover:scale-105"/>
             
             {hasItems &&
-                <div className="absolute mb-5 -right-1 z-20 bg-white border border-primary-700 shadow-md rounded-full leading-none px-1 text-xs font-bold text-primary-700 lg:leading-tight lg:px-2 lg:text-base lg:font-extrabold lg:mb-6 lg:-right-2">
+                <div className="absolute mb-5 -right-1 z-20 bg-white border border-primary-700 shadow-md rounded-full leading-none px-1 text-xs font-bold text-primary-700 lg:leading-tight lg:px-2 lg:text-base lg:font-extrabold lg:mb-6 lg:-right-2 tracking-tighter">
                     {quantity}
                 </div>
             }
@@ -129,11 +129,11 @@ const useQuantity = () => {
                         <FontAwesomeIcon icon={faTimesCircle} onClick={() => setOpen(!open)} open={open} className="text-primary-600 text-xl md:text-2xl m-1 ml-auto cursor-pointer"/>
                     </div>
 
-                    <div className="py-2">
+                    <div className="py-2 font-content">
                     {line_items}
                     </div>
             
-                    <div className="mt-auto w-full pt-3 flex flex-col items-center">
+                    <div className="mt-auto w-full pt-3 flex flex-col items-center font-content">
                     
                         <div className="flex items-center">
                             <span className="mr-2 text-2xl font-bold">Subtotal: </span>
@@ -146,7 +146,7 @@ const useQuantity = () => {
 
                 
                         <div className="mx-auto pt-5">
-                            <button className="button py-2 px-4 text-2xl md:text-3xl text-white leading-normal" onClick={handleCheckout} disabled={checkout.lineItems.length === 0}>Checkout</button>
+                            <button className="font-headers button py-2 px-4 text-2xl md:text-3xl text-white leading-normal tracking-tight" onClick={handleCheckout} disabled={checkout.lineItems.length === 0}>Checkout</button>
                         </div>
             
                     </div>

@@ -62,7 +62,7 @@ const Auction = () => {
                 pageUrl={sharingUrl}
             />   
 
-            <h1 className="text-3xl font-bold border-b-2 border-primary-700 pb-1 m-2">Adrenalize e-Commerce Live Auction</h1>
+            <h1 className="text-3xl font-bold border-b-2 border-primary-700 pb-1 m-2">Netstaurant Live Auction</h1>
 
             <div className="grid grid-cols-1 lg:grid-cols-2">
 

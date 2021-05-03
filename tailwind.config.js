@@ -6,6 +6,9 @@ module.exports = {
     content: ['./src/**/*.js'],
   },
   darkMode: false,
+  corePlugins: {
+   fontFamily: false,
+  },
   theme: {
     screens:{
       sm: '600px',
@@ -14,13 +17,6 @@ module.exports = {
       xl: '1280px',
       xxl: '1536px'
     },
-    fontFamily: {
-      'sans': ['Barlow', 'sans-serif'],
-      'serif': ['ui-serif'],
-      'mono': ['ui-monospace'],
-      'display': ['Barlow', 'sans-serif'],
-      'body': ['Barlow', 'sans-serif'],
-     },
     colors: {
       primary: colors.red,
       secondary: colors.black,
