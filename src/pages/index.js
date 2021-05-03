@@ -8,6 +8,7 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faTags, faUserCheck, faShippingFast, faHandHoldingUsd } from '@fortawesome/free-solid-svg-icons'
 import ProductCard from '../components/products/productCard'
 import ProductGrid from '../components/products/productGrid'
+import LazyLoad from 'react-lazyload';
  
 const Index = () => {
 
@@ -137,18 +138,19 @@ const Index = () => {
                 {data.products.nodes.map((product) => {
 
                     return(
+                        <LazyLoad>
+                          <React.Fragment>
+                          
+                          <ProductCard
+                              title={product.title}
+                              image={product.images}
+                              price={`${product.variants.map((variant) => variant.price)}`}
+                              url={product.handle}
+                              key={product.shopifyId}
+                          />   
 
-                        <React.Fragment>
-                        
-                        <ProductCard
-                            title={product.title}
-                            image={product.images}
-                            price={`${product.variants.map((variant) => variant.price)}`}
-                            url={product.handle}
-                            key={product.shopifyId}
-                        />   
-
-                        </React.Fragment>                        
+                          </React.Fragment>    
+                        </LazyLoad>                    
                     )
                 })}
 
@@ -167,10 +169,13 @@ const Index = () => {
                 {data.collections.nodes.map((collection) => {
 
                   return(
-                    <Link className="m-2 p-2 rounded-md flex flex-col items-center transform hover:scale-105" to={collection.handle} alt="">
-                        <GatsbyImage image={collection.image.localFile.childImageSharp.gatsbyImageData} className="rounded-md shadow-md w-full" alt=""/>
-                        <span className="text-xl font-medium">{collection.title}</span>
-                    </Link>
+
+                    <LazyLoad>
+                      <Link className="m-2 p-2 rounded-md flex flex-col items-center transform hover:scale-105" to={collection.handle} alt="">
+                          <GatsbyImage image={collection.image.localFile.childImageSharp.gatsbyImageData} className="rounded-md shadow-md w-full" alt=""/>
+                          <span className="text-xl font-medium">{collection.title}</span>
+                      </Link>
+                    </LazyLoad>
                   )
                 })}
 
