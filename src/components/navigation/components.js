@@ -25,7 +25,7 @@ const useQuantity = () => {
                 <Link 
                     className="flex flex-row items-center"
                     to={homeUrl} 
-                    alt="Link to Adrenalize e-Commerce Home Page"
+                    alt="Link to Netstaurant Home Page"
                 >
 
                     <GatsbyImage 
@@ -36,7 +36,7 @@ const useQuantity = () => {
                     />
 
                     <div className="flex flex-col ml-1 sm:ml-3">
-                        <h1 className="text-lg sm:text-xl lg:text-4xl font-headers font-bold text-white leading-none tracking-tight">{title}</h1>
+                        <h1 className="text-xl md:text-2xl lg:text-4xl font-headers font-bold text-white leading-none tracking-tight">{title}</h1>
                         <h2 className="text-base sm:text-md lg:text-xl font-content font-medium text-white leading-none">{caption}</h2>
                     </div>
 
