@@ -3,7 +3,7 @@ import StoreContext from '../context/StoreContext'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faMinusCircle, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 import { toast } from 'react-toastify';
-  
+
 const LineItem = props => {
   const { line_item } = props
   const {
@@ -72,7 +72,7 @@ const LineItem = props => {
       {variantImage}
 
       <div className="text-lg md:text-xl w-4/5 md:w-3/4 flex flex-col ml-auto mr-2 px-5 py-1">
-
+        
         <span className=" font-semibold leading-tight">{line_item.title}</span>
 
         <div className="flex flex-row items-center font-medium">

@@ -6,42 +6,47 @@ import { StyledFilter, StyledToggle } from './components.styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
 import { bool, func } from 'prop-types'
+import LazyLoad from 'react-lazyload';
 
 const SearchHit = ({ hit: {objectID, title, handle, sku, productType, vendor, images } }) => (
 
-    <article key={objectID} className="flex flex-row">
+    <LazyLoad overflow={true}>
 
-        <Link className="w-2/5 m-auto" to={`/products/${handle}`} alt={title}>
-        {images.slice(0, 1).map((image) => {
-            return(<GatsbyImage image={image} alt={title}/>
-        )})}
-        </Link>
+        <article key={objectID} className="flex flex-row">
 
-        <div className="flex flex-col w-3/5">
+            <Link className="w-2/5 m-auto" to={`/products/${handle}`} alt={title}>
+            {images.slice(0, 1).map((image) => {
+                return(<GatsbyImage image={image} alt={title}/>
+            )})}
+            </Link>
 
-            <span className="py-2 font-semibold text-lg lg:text-xl leading-tight">{title}</span>
+            <div className="flex flex-col w-3/5">
 
-            <div className="flex flex-row items-center text-base lg:text-lg leading-tight">
-                <span className="font-medium mr-1">Product Type:</span><span>{productType}</span>
+                <span className="py-2 font-semibold text-lg lg:text-xl leading-tight">{title}</span>
+
+                <div className="flex flex-row items-center text-base lg:text-lg leading-tight">
+                    <span className="font-medium mr-1">Product Type:</span><span>{productType}</span>
+                </div>
+
+                <div className="flex flex-row items-center text-base lg:text-lg leading-tight">
+                    <span className="font-medium mr-1">Vendor:</span><span>{vendor}</span>
+                </div>
+
+                <div className="flex flex-row items-center text-base lg:text-lg leading-tight pb-2">
+                    <span className="font-medium mr-1">Model/Sku:</span><span>{sku}</span>
+                </div>
+
+                <Button
+                    className="mx-auto mb-2 mt-auto px-2 py-1 text-lg md:text-xl md:px-3 md:py-2"
+                    text="View Product"
+                    url={`/products/${handle}`}
+                />
+
             </div>
+            
+        </article>
 
-            <div className="flex flex-row items-center text-base lg:text-lg leading-tight">
-                <span className="font-medium mr-1">Vendor:</span><span>{vendor}</span>
-            </div>
-
-            <div className="flex flex-row items-center text-base lg:text-lg leading-tight pb-2">
-                <span className="font-medium mr-1">Model/Sku:</span><span>{sku}</span>
-            </div>
-
-            <Button
-                className="mx-auto mb-2 mt-auto px-2 py-1 text-lg md:text-xl md:px-3 md:py-2"
-                text="View Product"
-                url={`/products/${handle}`}
-            />
-
-        </div>
-        
-    </article>
+    </LazyLoad>
 
 );
 
