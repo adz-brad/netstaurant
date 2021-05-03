@@ -31,7 +31,8 @@ const useQuantity = () => {
                     <GatsbyImage 
                         className="w-12 sm:w-16 lg:w-24 mr-1"
                         image={logoImage} 
-                        alt={`${title} Logo`} 
+                        alt={`${title} Logo`}
+                        loading="eager" 
                     />
 
                     <div className="flex flex-col ml-2 sm:ml-3">

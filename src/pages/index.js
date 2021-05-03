@@ -84,7 +84,7 @@ const Index = () => {
 
 
             <div className="landing">            
-              <BgImage image={bgImage} className="landing-bg">
+              <BgImage image={bgImage} className="landing-bg" loading="eager">
                 <div className="landing-caption">
                   <h1 className="text-white font-bold text-7xl filter drop-shadow-lg mt-auto border-b-4 border-primary-700">{data.graphCmsLandingPage.header}</h1> 
                   <h2 className="text-white font-medium text-3xl filter drop-shadow-lg">Welcome to your business' new home on the web!</h2>
