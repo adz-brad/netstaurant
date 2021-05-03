@@ -5,7 +5,8 @@ export const StyledBody = styled.div`
     width:100%;
     padding-top:70px;
     padding-bottom:0;
-    overflow:scroll;
+    overflow:auto;
+    position:relative;
 
     @media screen and (min-width:1024px){
         padding:0;

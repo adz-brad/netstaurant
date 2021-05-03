@@ -138,7 +138,7 @@ const Index = () => {
                 {data.products.nodes.map((product) => {
 
                     return(
-                        <LazyLoad>
+                        <LazyLoad overflow={true}>
                           <React.Fragment>
                           
                           <ProductCard
@@ -170,7 +170,7 @@ const Index = () => {
 
                   return(
 
-                    <LazyLoad>
+                    <LazyLoad overflow={true}>
                       <Link className="m-2 p-2 rounded-md flex flex-col items-center transform hover:scale-105" to={collection.handle} alt="">
                           <GatsbyImage image={collection.image.localFile.childImageSharp.gatsbyImageData} className="rounded-md shadow-md w-full" alt=""/>
                           <span className="text-xl font-medium">{collection.title}</span>
