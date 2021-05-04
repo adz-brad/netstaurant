@@ -6,18 +6,18 @@ module.exports = {
     FAST_REFRESH: true,
   },
   siteMetadata: {
-    title: `Adrenalize eCommerce Starter`,
-    description: `Adrenalize Digital - Gatsby-Tailwind-Shopify e-Commerce Starter`,
-    keywords: 'Gatsby, Tailwind, Shopify, Starter',
-    siteUrl: 'https://www.adrenalizedigital.ca',
+    title: `Netstaurant Restaurant Equipment`,
+    description: `Online Restaurant Equipment Supply - Top Quality Products with Fast, Canada-wide Shipping`,
+    keywords: 'Netstaurant, Online, Restaurant, Equipment, Supply',
+    siteUrl: 'https://www.netstaurant.ca',
   },
   plugins: [
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Adrenalize e-Commerce',
-        short_name: `Adrenalize e-Commerce`,
-        background_color: `#111`,
+        name: 'Netstaurant Restaurant Equipment',
+        short_name: `Netstaurant`,
+        background_color: `#B91C1C`,
         lang: `en`,
         theme_color: `#B91C1C`,
         start_url: '/',
