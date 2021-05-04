@@ -22,7 +22,7 @@ const SearchHit = ({ hit: {objectID, title, handle, sku, productType, vendor, im
 
             <div className="flex flex-col w-3/5">
 
-                <span className="py-2 font-bold text-lg lg:text-xl tracking-tighter leading-tight">{title}</span>
+                <span className="py-2 font-bold text-lg lg:text-xl tracking-tighter leading-tight font-headers">{title}</span>
 
                 <div className="flex flex-row items-center text-base lg:text-lg font-content">
                     <span className="font-semibold tracking-tight mr-1">Product Type:</span><span className="font-content">{productType}</span>
@@ -37,7 +37,7 @@ const SearchHit = ({ hit: {objectID, title, handle, sku, productType, vendor, im
                 </div>
 
                 <Button
-                    className="mx-auto mb-2 mt-auto px-2 py-1 text-lg md:text-xl md:px-3 md:py-2"
+                    className="mx-auto mb-2 mt-auto px-2 py-1 text-lg md:text-xl md:px-3 md:py-2 font-headers"
                     text="View Product"
                     url={`/products/${handle}`}
                 />

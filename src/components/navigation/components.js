@@ -91,7 +91,7 @@ const useQuantity = () => {
             <FontAwesomeIcon icon={faShoppingCart} onClick={() => setOpen(!open)} open={open} className="text-white text-2xl lg:text-3xl m-1 lg:ml-3 cursor-pointer absolute transform hover:scale-105"/>
             
             {hasItems &&
-                <div className="absolute mb-5 -right-1 z-20 bg-white border border-primary-700 shadow-md rounded-full leading-none px-1 text-xs font-bold text-primary-700 lg:leading-tight lg:px-2 lg:text-base lg:font-extrabold lg:mb-6 lg:-right-2 tracking-tighter">
+                <div className="absolute mb-5 -right-1 z-20 bg-white border border-primary-700 shadow-md rounded-full leading-none px-1 text-xs font-bold text-primary-700 lg:leading-tight lg:text-base lg:font-extrabold lg:mb-6 lg:-right-2 font-headers">
                     {quantity}
                 </div>
             }
@@ -125,7 +125,7 @@ const useQuantity = () => {
                 <StyledCartOverlay open={open} className={className} >
 
                     <div className="border-b-2 border-primary-600 flex flex-row items-center">        
-                        <h1 className="text-3xl md:text-4xl font-bold pb-1">Your Cart</h1>
+                        <h1 className="text-3xl md:text-4xl font-bold pb-1 font-headers">Your Cart</h1>
                         <FontAwesomeIcon icon={faTimesCircle} onClick={() => setOpen(!open)} open={open} className="text-primary-600 text-xl md:text-2xl m-1 ml-auto cursor-pointer"/>
                     </div>
 
@@ -141,7 +141,7 @@ const useQuantity = () => {
                         </div>
 
                         <div className="italic mt-2">
-                            Taxes + Shipping Costs calculated at checkout.
+                            Taxes + Shipping calculated at checkout.
                         </div>
 
                 

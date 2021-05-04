@@ -51,7 +51,7 @@ const Product = ({ pageContext: { product } }) => {
             <ProductSEO/>
 
             <div className="shadow-md rounded-sm py-2 px-3">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter w-full text-center py-2">{product.title}</h1>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter w-full text-center py-2 font-headers">{product.title}</h1>
             </div>
             <div className="flex flex-col lg:flex-row py-5">     
 
@@ -88,7 +88,7 @@ const Product = ({ pageContext: { product } }) => {
                 <div className="flex flex-col w-full lg:w-3/8 p-2">
 
                     <div className="shadow-md rounded-sm py-2 px-3">
-                    <h3 className="border-b-2 border-primary-600 pt-2 mb-3 text-2xl font-bold">Product Details</h3>
+                    <h3 className="border-b-2 border-primary-600 pt-2 mb-3 text-2xl font-bold font-headers">Product Details</h3>
                             <div className="flex flex-row items-center"><span className="text-xl font-semibold font-content pr-2">Vendor: </span><span className="text-xl">{product.vendor}</span></div> 
                             <div className="flex flex-row items-center"><span className="text-xl font-semibold font-content pr-2">Product Type: </span><span className="text-xl">{product.productType}</span></div>
 
@@ -101,7 +101,7 @@ const Product = ({ pageContext: { product } }) => {
                             })}   
                     </div>
                     <div className="shadow-md rounded-sm py-2 px-3">
-                    <h3 className="border-b-2 border-primary-600 pt-2 mb-5 text-2xl font-bold">Product Description</h3>
+                    <h3 className="border-b-2 border-primary-600 pt-2 mb-5 text-2xl font-bold font-headers">Product Description</h3>
 
                     <div className="product-description font-content" dangerouslySetInnerHTML={{__html: `${product.descriptionHtml}`}}/>
                     </div>
@@ -116,10 +116,10 @@ const Product = ({ pageContext: { product } }) => {
 
                     <TabList className="md:border-b-2 md:border-primary-700 mb-5 shadow-md rounded-sm text-3xl font-bold flex flex-col md:flex-row">
 
-                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2">Product Specs</h4></Tab>
-                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2">Shipping</h4></Tab>
-                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2">Warranty</h4></Tab>
-                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2">Financing</h4></Tab>
+                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2 font-headers">Product Specs</h4></Tab>
+                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2 font-headers">Shipping</h4></Tab>
+                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2 font-headers">Warranty</h4></Tab>
+                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-2xl p-2 font-headers">Financing</h4></Tab>
 
                     </TabList>
          

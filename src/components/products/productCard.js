@@ -25,12 +25,12 @@ const ProductCard = ({className, title, image, price, url, key}) => {
 
                 </Link>
                 
-                <span className="text-center pt-3 font-content text-lg lg:text-xl leading-tight">{title}</span>
+                <span className="text-center pt-3 font-content text-lg lg:text-xl leading-tight font-headers">{title}</span>
                 
-                <span className="p-3 mt-auto font-medium text-xl lg:text-2xl text-green-600">$ {price}</span>
+                <span className="p-3 mt-auto font-medium text-xl lg:text-2xl text-green-600 font-headers">$ {price}</span>
 
                 <Button
-                    className="mt-auto mb-3 px-2 py-1 text-lg md:text-xl md:px-3 md:py-2"
+                    className="mt-auto mb-3 px-2 py-1 text-lg md:text-xl md:px-3 md:py-2 font-headers"
                     url={`/products/${url}`}
                     ariaLabel={`Link to ${title} product page`}
                     text="View Product"

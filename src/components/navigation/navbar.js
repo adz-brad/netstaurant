@@ -109,7 +109,7 @@ const Navbar = () => {
 							<div key={menuCategory.id}>
 
 							<div className="border-b-2 border-primary-600">
-								<span className="text-2xl md:text-3xl font-semibold tracking-tight">{menuCategory.title}</span>
+								<span className="text-2xl md:text-3xl font-semibold tracking-tight font-headers">{menuCategory.title}</span>
 							</div>
 
 							<div className="flex flex-col py-2">

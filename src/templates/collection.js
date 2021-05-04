@@ -20,7 +20,7 @@ const Collection = ({ pageContext: { collection } } ) => {
             />
 
             <div className="pb-1">
-                <h1 className="text-2xl md:text-3xl lg:text-5xl font-medium pb-2">{collection.title}</h1>
+                <h1 className="text-2xl md:text-3xl lg:text-5xl font-medium pb-2 font-headers">{collection.title}</h1>
                 <p className="text-base md:text-lg leading-snug">{collection.description}</p>
             </div>
 

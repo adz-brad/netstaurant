@@ -118,7 +118,7 @@ const Contact = () => {
             />   
 
             <div className="pb-1 border-b-2 border-primary-700">
-                <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-tight pb-2">Contact Us</h1>
+                <h1 className="text-3xl lg:text-5xl font-bold tracking-tight pb-2 font-headers">Contact Us</h1>
                 <p className="text-base md:text-lg leading-snug font-content">Need a custom quote? Curious about one of our products? Just need to get in touch with a company representative? Fill out the contact form below and we'll be in touch with you as soon as we can!</p>
             </div>
 
@@ -168,7 +168,7 @@ const Contact = () => {
 
                 
                 <div className="w-full text-center">
-                    <button className="button px-3 py-1 text-2xl mb-4" type="submit">Send</button>
+                    <button className="button px-3 py-1 text-2xl mb-4 font-headers" type="submit">Send</button>
                 </div>
                 
 

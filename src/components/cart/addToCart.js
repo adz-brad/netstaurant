@@ -100,7 +100,7 @@ const ProductForm = ({ product }) => {
         
 
         <button
-            className="button my-3 py-2 px-3 text-2xl"
+            className="button my-3 py-2 px-3 text-2xl font-headers"
             type="submit"
             disabled={!available || adding}
             onClick={handleAddToCart}

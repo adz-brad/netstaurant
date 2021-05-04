@@ -73,7 +73,7 @@ const LineItem = props => {
 
       <div className="text-lg md:text-xl w-4/5 md:w-3/4 flex flex-col ml-auto mr-2 px-5 py-1">
         
-        <span className=" font-semibold leading-tight">{line_item.title}</span>
+        <span className=" font-semibold leading-tight font-headers">{line_item.title}</span>
 
         <div className="flex flex-row items-center font-medium">
           <span className="mr-3">Quantity:</span>

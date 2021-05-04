@@ -97,7 +97,7 @@ import 'react-tabs/style/react-tabs.css';
 
                         </div>
 
-                        <button className="button px-2 py-1 text-2xl font-medium w-1/4" type="submit">Submit Bid</button>
+                        <button className="button px-2 py-1 text-2xl font-medium w-1/4 font-headers" type="submit">Submit Bid</button>
 
                     </form>
 
@@ -111,7 +111,7 @@ import 'react-tabs/style/react-tabs.css';
         <div className="flex flex-col m-2 m-2 shadow-md rounded-md">
 
             <div className="shadow-md rounded-sm py-2 w-3/4 mx-auto">
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold w-full text-center py-2 tracking-tighter">{item.productName}</h1>
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold w-full text-center py-2 tracking-tighter font-headers">{item.productName}</h1>
             </div>
 
             <div className="flex flex-row w-3/4 mx-auto">         
@@ -134,10 +134,10 @@ import 'react-tabs/style/react-tabs.css';
 
                     <TabList className="md:border-b-2 md:border-primary-700 mb-5 shadow-md rounded-sm text-3xl font-bold flex flex-col md:flex-row">
 
-                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-xl font-medium p-2">Item Description</h4></Tab>
-                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-xl font-medium p-2">Taxes & Fees</h4></Tab>
-                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-xl font-medium p-2">Shipping & Payment</h4></Tab>
-                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-xl font-medium p-2">Terms & Conditions</h4></Tab>
+                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-xl font-medium p-2 font-headers">Item Description</h4></Tab>
+                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-xl font-medium p-2 font-headers">Taxes & Fees</h4></Tab>
+                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-xl font-medium p-2 font-headers">Shipping & Payment</h4></Tab>
+                        <Tab className="flex flex-grow cursor-pointer"><h4 className="m-auto text-xl font-medium p-2 font-headers">Terms & Conditions</h4></Tab>
 
                     </TabList>
          
