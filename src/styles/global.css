@@ -20,11 +20,11 @@
     /* ----- BASE ----- */
 
     .font-headers{
-        font-family: Kanit, sans-serif;
+        font-family: "Kanit", "sans-serif";
     }
 
     .font-content{
-        font-family: Poppins, sans-serif;
+        font-family: "Poppins", "sans-serif";
     }
 
     *:focus{
