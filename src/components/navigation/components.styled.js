@@ -80,5 +80,25 @@ export const StyledNav = styled.nav`
   }
 `;
 
+export const StyledAccountOverlay = styled.div`
+display:${({ open }) => open ? 'block' : 'none'};
+position:fixed;
+top:50%;
+left:50%;
+height:calc(100% - 20px);
+width:calc(100% - 20px);
+transform: translate(-50%,-50%);
+transition: 0.3s ease;
+overflow-y:scroll;
+@media screen and (min-width:600px){
+  top:0;
+  left:0;
+  height:50vh!important;
+  width:50vw!important;
+  transform: translate(50%,50%);
+}
+
+`;
+
 
 

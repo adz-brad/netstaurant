@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useOnClickOutside } from '../../hooks/closeMenu'
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import { NavLogo, MenuToggle, NavMenu, CartToggle, CartOverlay } from './components'
+import { NavLogo, AccountToggle, AccountOverlay, MenuToggle, NavMenu, CartToggle, CartOverlay } from './components'
 import { StyledNav } from './components.styled'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faFacebookF as Facebook, faLinkedinIn as LinkedIn, faInstagram as Instagram, faPinterestP as Pinterest } from '@fortawesome/free-brands-svg-icons'
 import { faSearch, faCommentDots } from '@fortawesome/free-solid-svg-icons'
+import { useAuth0 } from "../../services/auth"
 
 const Navbar = () => {
 
@@ -41,9 +42,10 @@ const Navbar = () => {
 
 	const [open, setOpen] = useState(false);
 	const [cartOpen, setCartOpen] = useState(false);
+	const [accountOpen, setAccountOpen] = useState(false);
 
 	const node = useRef(); 
-    useOnClickOutside(node, () => setOpen(false));
+	useOnClickOutside(node, () => setOpen(false));
 
 	const [scrolled, setScrolled] = React.useState(false);
 
@@ -70,10 +72,11 @@ const Navbar = () => {
         require("smooth-scroll")('a[href*="#"]')
     }
 
+	const { isAuthenticated, loginWithRedirect, logout } = useAuth0()
 
     return(
 
-		<StyledNav ref={node} className={`${navbarClasses.join(" ")} fixed top-0 left-0 z-30 flex flex-row items-center w-full bg-primary-700 px-3`}>
+		<StyledNav ref={node} className={`${navbarClasses.join(" ")} fixed top-0 left-0 z-30 flex flex-row items-center w-full bg-primary-700 px-2 sm:px-3`}>
 
 			<NavLogo
 				title={siteID.title}
@@ -92,11 +95,25 @@ const Navbar = () => {
 					<Icon icon={faSearch} className="text-white text-2xl lg:text-3xl m-1 lg:mx-2 transform hover:scale-105"/>
 				</Link>
 
+				<AccountToggle open={accountOpen} setOpen={setAccountOpen} />
+
 				<CartToggle open={cartOpen} setOpen={setCartOpen} />
 
 				<MenuToggle open={open} setOpen={setOpen} />
 
 			</div>
+
+			<AccountOverlay open={accountOpen} setOpen={setAccountOpen} className="fixed bottom-0 w-full z-50 shadow-lg rounded-md border-2 bg-white p-2 md:p-3">
+				{!isAuthenticated && (
+					<div className="flex flex-col items-center">
+						<h1 className="text-2xl font-semibold font-headers">Log in to your Netstaurant Account</h1>
+						<h2 className="text-sm font-light">or sign up for a new account if you haven't already.</h2>
+						<button className="button text-2xl px-2 py-1 my-4"  onClick={() => loginWithRedirect({})}>Log in / Sign Up</button>
+					</div>			
+				)
+				}
+				{isAuthenticated && <button onClick={() => logout()}>Log out</button>}
+			</AccountOverlay>
 
 			<CartOverlay open={cartOpen} setOpen={setCartOpen} className="hidden cart-overlay fixed bottom-0 w-full z-50 shadow-lg rounded-sm border-2 bg-white p-2 md:p-3"/>
 

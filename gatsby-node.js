@@ -105,10 +105,8 @@
                 edges {
                   item: node {
                     productName
-                    auctionStart
                     auctionEnd
                     productSlug
-                    bidIncrement
                     productDescription{
                       text
                       markdownNode {
@@ -168,3 +166,13 @@
     })
 
  }
+
+ exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions
+  
+  if (page.path.match(/^\/account/)) {
+    page.matchPath = "/account/*"
+    createPage(page)
+  }
+}
+

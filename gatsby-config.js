@@ -1,10 +1,6 @@
 require('dotenv').config()
  
 module.exports = {
-  flags: {
-    FAST_DEV: true,
-    FAST_REFRESH: true,
-  },
   siteMetadata: {
     title: `Netstaurant Restaurant Equipment`,
     description: `Online Restaurant Equipment Supply - Top Quality Products with Fast, Canada-wide Shipping`,

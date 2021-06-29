@@ -5,20 +5,20 @@ import ContextProvider from '../../provider/ContextProvider'
 
 
 function Layout({ children, pageContext: { page } }) {
+
     return (
 
-      <ContextProvider>
+        <ContextProvider>
 
-        <Header>
-          <Navbar/>
-        </Header>
+          <Header>
+            <Navbar/>
+          </Header>
 
-        <PageWrapper>
-          {children}
-        </PageWrapper>
+          <PageWrapper>
+            {children}
+          </PageWrapper>
 
-      </ContextProvider>
-      
+        </ContextProvider>
     )
   }
   

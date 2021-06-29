@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { StyledToggle, StyledMenu, StyledCartOverlay } from './components.styled';
+import { StyledToggle, StyledAccountOverlay, StyledMenu, StyledCartOverlay } from './components.styled';
 import reduce from 'lodash/reduce'
 import { bool, func } from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart, faTimesCircle, faUser } from '@fortawesome/free-solid-svg-icons'
 import StoreContext from '../context/StoreContext'
 import LineItem from '../cart/LineItem'
 
@@ -15,12 +15,14 @@ const useQuantity = () => {
 	const total = reduce(items, (acc, item) => acc + item.quantity, 0)
 	return [total !== 0, total]
 }
-  
+
+
+
     const NavLogo = ( { homeUrl, title, caption, logoImage }) => {
 
         return(
         
-            <div className="py-2">
+            <div className="py-0 sm:py-2">
 
                 <Link 
                     className="flex flex-row items-center"
@@ -37,7 +39,7 @@ const useQuantity = () => {
 
                     <div className="flex flex-col ml-1 sm:ml-3">
                         <h1 className="text-xl md:text-2xl lg:text-4xl font-headers font-bold text-white leading-none tracking-tight">{title}</h1>
-                        <h2 className="text-base sm:text-md lg:text-xl font-content font-medium text-white leading-none">{caption}</h2>
+                        <h2 className="hidden sm:block sm:text-md lg:text-xl font-content font-medium text-white leading-none">{caption}</h2>
                     </div>
 
 
@@ -49,7 +51,7 @@ const useQuantity = () => {
     }
 
     const MenuToggle = ({open, setOpen}) => {
-    
+
         return(
 
             <StyledToggle onClick={() => setOpen(!open)} open={open} className="toggle-button ml-3 flex lg:hidden" role="button" aria-label="Menu Toggle">
@@ -64,6 +66,41 @@ const useQuantity = () => {
         open: bool.isRequired,
         setOpen: func.isRequired,
     };
+
+    const AccountToggle = ({ open, setOpen}) => {
+
+        return(
+
+            <div className="relative flex flex-row items-center justify-center w-8">
+
+            <FontAwesomeIcon icon={faUser} onClick={() => setOpen(!open)} open={open} className="text-white text-2xl lg:text-3xl m-1 lg:ml-2 lg:mr-3 cursor-pointer transform hover:scale-105"/>
+        
+            </div>
+        )
+    }
+
+    AccountToggle.propTypes = {
+        open: bool.isRequired,
+        setOpen: func.isRequired,
+    };
+
+    const AccountOverlay = ({ children, className, open, setOpen }) => {
+        
+        return(
+
+        <StyledAccountOverlay open={open} className={className}>
+            <div className="border-b-2 border-primary-600 flex flex-row items-center">        
+                <h1 className="text-3xl md:text-4xl font-bold pb-1 m-2 font-headers">Your Account</h1>
+                <FontAwesomeIcon icon={faTimesCircle} onClick={() => setOpen(!open)} open={open} className="absolute top-1 right-1 text-primary-600 text-xl md:text-2xl m-1 ml-auto cursor-pointer"/>
+            </div>
+            <div className="flex flex-row h-4/5 w-full items-center justify-center">
+            {children}
+            </div>
+            
+        </StyledAccountOverlay>
+        
+        )
+    }
 
     const NavMenu =({className, children, open}) =>{
 
@@ -106,6 +143,7 @@ const useQuantity = () => {
     };
 
     const CartOverlay = ({className, open, setOpen }) => {
+        
 
         const {
             store: { checkout },
@@ -162,4 +200,4 @@ const useQuantity = () => {
     };
 
 
-export { NavLogo, MenuToggle, NavMenu, CartToggle, CartOverlay }
+export { NavLogo, AccountToggle, AccountOverlay, MenuToggle, NavMenu, CartToggle, CartOverlay }

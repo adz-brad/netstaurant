@@ -15,21 +15,11 @@ const Auction = () => {
                 }
             }
         },
-        auctionItems: allGraphCmsAuctionItem {
+        auctionItems: allGraphCmsAuctionItem(sort: {order: ASC, fields: auctionEnd}) {
             nodes{
-                productName
-                auctionStart
                 auctionEnd
+                productName
                 productSlug
-                bidIncrement
-                productDescription{
-                    text
-                    markdownNode {
-                        childMdx {
-                            body
-                        }
-                    }
-                    }
                 productImage{
                     localFile{
                         childImageSharp{
@@ -37,7 +27,6 @@ const Auction = () => {
                         }
                     }
                 }
-                updatedAt
                 remoteId
                 bids {
                     name
@@ -62,9 +51,9 @@ const Auction = () => {
                 pageUrl={sharingUrl}
             />   
 
-            <h1 className="text-3xl font-bold border-b-2 border-primary-700 pb-1 m-2">Netstaurant Live Auction</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold border-b-2 border-primary-700 pb-1 m-2">Netstaurant Live Auction</h1>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="flex flex-col">
 
                 {data.auctionItems.nodes.map((auctionItem) => {
 
@@ -75,7 +64,6 @@ const Auction = () => {
                             itemImage={auctionItem.productImage.localFile.childImageSharp.gatsbyImageData}
                             itemLink={auctionItem.productSlug}
                             itemID={auctionItem.remoteId}
-                            auctionEnd={auctionItem.auctionEnd}
                         />
 
                     )

@@ -30,7 +30,7 @@
         }}
 
     .button{
-        @apply mx-auto text-white font-semibold rounded-md shadow-sm bg-primary-700 hover:bg-primary-600;}
+        @apply text-white font-semibold rounded-md shadow-sm bg-primary-700 hover:bg-primary-600;}
 
 
     /* ----- PRODUCTS ----- */
@@ -176,7 +176,7 @@
         @apply p-2 m-1 !important;}
 
     .custom-toast{
-        @apply  shadow-lg rounded-md text-white text-xl font-medium bg-primary-700 hover:bg-primary-600 min-h-0 cursor-pointer !important;}
+        @apply  font-content shadow-lg rounded-md text-white text-lg font-medium bg-primary-700 hover:bg-primary-600 min-h-0 cursor-pointer !important;}
     
     .Toastify__close-button{
         @apply text-white opacity-100 !important;}
@@ -206,10 +206,10 @@
     /* ----- AUCTION ----- */
 
     .countdown-number{
-        @apply text-3xl font-semibold mr-1 text-primary-700;}
+        @apply text-base sm:text-xl font-semibold mr-1 text-primary-700;}
 
     .countdown-label{
-        @apply text-2xl mr-3;}
+        @apply text-base sm:text-xl mr-1 sm:mr-3;}
 
 
     /* ----- LANDING ----- */
@@ -270,7 +270,35 @@
         max-width:160px;
         margin:0 10px 0 10px;}
 
+    
 
+    .video-embed{
+        width:100%;
+        height:320px;
+    }
+
+    @media screen and (min-width: 680px){
+        .video-embed{
+            height:420px;
+        }
+    }
+
+    @media screen and (min-width: 1290px){
+        .video-embed{
+            height:600px;
+        }
+    }
+
+    @media screen and (min-width: 1480px){
+        .video-embed{
+            height:720px;
+        }
+    }
+
+
+    .accordion__button{
+        @apply font-semibold;
+    }
 
 
 
