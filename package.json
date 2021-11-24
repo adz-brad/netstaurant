@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-shopify-graphcms-tailwind-e-commerce",
+  "name": "netstaurant-boilerplate",
   "private": false,
-  "description": "Adrenalize Digital e-Commerce Starter using Shopify PIM, GraphCMS + TailwindCSS",
+  "description": "Netstaurant Resto Equipment - Boilerplate feat. Gatsby - Shpify - TailwindCSS",
   "version": "1.0.0",
   "license": "0BSD",
   "scripts": {
@@ -75,7 +75,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adrenalize-brad/gatsby-react-bootstrap-starter"
+    "url": "https://github.com/brad-nst/netstaurant"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
